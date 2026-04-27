@@ -208,3 +208,75 @@ footer {
     font-size: 0.85rem;
     border-top: 1px solid var(--border);
 }
+
+/* Estilo para el Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Sección Experiencia */
+#experiencia {
+    padding: 100px 10%;
+    background: linear-gradient(180deg, #0a0e14 0%, #161b22 100%);
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.exp-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border-bottom: 3px solid var(--primary);
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* Tarjetas con Tags */
+.card {
+    position: relative;
+}
+
+.card-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #238636;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-tag.next {
+    background: #8b949e;
+}
+
+.card.disabled {
+    opacity: 0.7;
+}
