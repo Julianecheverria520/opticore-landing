@@ -282,3 +282,42 @@ nav {
 .tel-link:hover {
     color: var(--primary);
 }
+
+
+.consultoria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.consultoria-item {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 16px;
+    border-left: 4px solid var(--primary); /* Resalte lateral con tu color cian */
+    text-align: left;
+    transition: 0.3s;
+}
+
+.consultoria-item:hover {
+    background: #1c2128;
+    transform: translateY(-5px);
+}
+
+.icon-bi {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.consultoria-item h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.consultoria-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
