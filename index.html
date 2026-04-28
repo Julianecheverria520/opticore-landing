@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OptiCore Systems IA | Ingeniería de Datos + IA para el Sector Constructor</title>
     <meta name="description" content="25 años de lógica ERP aplicada a la era de la IA. Plataforma SaaS de gestión logística, consultoría en Power BI y modernización de sistemas legados para el sector de la construcción.">
+    <!-- OG Tags para LinkedIn / WhatsApp -->
+    <meta property="og:title" content="OptiCore Systems IA — Logística de Construcción con IA">
+    <meta property="og:description" content="Controla cada viaje de tu flota en tiempo real. GPS, preliquidaciones automáticas y OptiBot IA. Cero papel, cero errores.">
+    <meta property="og:image" content="https://apptransporte.onrender.com/og-image.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
@@ -13,20 +20,25 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/optibot.css">
+    <!-- ✅ NUEVO: Enhancement layer -->
+    <link rel="stylesheet" href="css/mejoras.css">
 </head>
 <body>
 
 <canvas id="bg-canvas"></canvas>
 
-<!-- NAV -->
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  NAV                                                                  ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <nav id="mainNav">
     <div class="nav-inner">
-        <a href="#inicio" class="logo-wrap" style="display: flex; align-items: center;">
+        <a href="#inicio" class="logo-wrap" style="display:flex;align-items:center;">
             <img src="logo.png" alt="OptiCore Systems IA" class="nav-logo">
         </a>
         <ul class="nav-links">
             <li><a href="#herencia">Nuestra Historia</a></li>
             <li><a href="#ecosistema">Ecosistema</a></li>
+            <li><a href="#como-funciona">Cómo Funciona</a></li>
             <li><a href="#modulo-01">Módulo Transporte</a></li>
             <li><a href="#consultoria">Consultoría BI</a></li>
             <li><a href="#contacto">Contacto</a></li>
@@ -40,16 +52,49 @@
     </div>
 </nav>
 
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  TICKER BAR                                                           ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<div class="ticker-wrap">
+    <div class="ticker-inner">
+        <!-- Duplicar el contenido para loop continuo -->
+        <span class="ticker-item"><span class="dot"></span>GPS en Tiempo Real</span>
+        <span class="ticker-item"><span class="dot"></span>Preliquidaciones Automáticas</span>
+        <span class="ticker-item"><span class="dot"></span>OptiBot IA</span>
+        <span class="ticker-item"><span class="dot"></span>Cero Vales en Papel</span>
+        <span class="ticker-item"><span class="dot"></span>Control de Vencimientos SOAT</span>
+        <span class="ticker-item"><span class="dot"></span>Conciliación en 2 Horas</span>
+        <span class="ticker-item"><span class="dot"></span>App Móvil PWA sin Descarga</span>
+        <span class="ticker-item"><span class="dot"></span>Torre de Control Predictivo</span>
+        <span class="ticker-item"><span class="dot"></span>Multi-empresa · Multi-tenant</span>
+        <span class="ticker-item"><span class="dot"></span>FastAPI + PostgreSQL + GPT-4o</span>
+        <!-- Copia para loop -->
+        <span class="ticker-item"><span class="dot"></span>GPS en Tiempo Real</span>
+        <span class="ticker-item"><span class="dot"></span>Preliquidaciones Automáticas</span>
+        <span class="ticker-item"><span class="dot"></span>OptiBot IA</span>
+        <span class="ticker-item"><span class="dot"></span>Cero Vales en Papel</span>
+        <span class="ticker-item"><span class="dot"></span>Control de Vencimientos SOAT</span>
+        <span class="ticker-item"><span class="dot"></span>Conciliación en 2 Horas</span>
+        <span class="ticker-item"><span class="dot"></span>App Móvil PWA sin Descarga</span>
+        <span class="ticker-item"><span class="dot"></span>Torre de Control Predictivo</span>
+        <span class="ticker-item"><span class="dot"></span>Multi-empresa · Multi-tenant</span>
+        <span class="ticker-item"><span class="dot"></span>FastAPI + PostgreSQL + GPT-4o</span>
+    </div>
+</div>
+
 <div class="mob-menu" id="mobMenu">
     <a href="#herencia">Nuestra Historia</a>
     <a href="#ecosistema">Ecosistema</a>
+    <a href="#como-funciona">Cómo Funciona</a>
     <a href="#modulo-01">Módulo Transporte</a>
     <a href="#consultoria">Consultoría BI</a>
     <a href="#contacto">Contacto</a>
     <a href="https://apptransporte.onrender.com/home" class="mob-cta" target="_blank">Entrar al Sistema →</a>
 </div>
 
-<!-- HERO -->
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  HERO                                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <header id="inicio" class="hero-sec">
     <div class="hero-inner-split">
         <div class="hero-left">
@@ -57,23 +102,110 @@
                 <span class="eyebrow-dot"></span>
                 Colombia · SaaS + IA · 2026
             </div>
-            <h1 class="hero-h1"> Más de 25 años de lógica de negocio.<br>
+            <h1 class="hero-h1">
+                Más de 25 años de lógica de negocio.<br>
                 <em class="grad">Ahora con inteligencia artificial.</em>
             </h1>
+            <div class="hero-btns-side" style="margin-top: 28px;">
+                <a href="#ecosistema" class="btn-prim">Ver Ecosistema</a>
+                <a href="#como-funciona" class="btn-sec" style="margin-left:12px;">¿Cómo funciona?</a>
+            </div>
         </div>
 
         <div class="hero-right">
+            <!-- Párrafo original -->
             <p class="hero-p-side reveal-delayed">
                 Automatizamos procesos críticos con IA generativa, manteniendo las reglas de negocio que han funcionado por décadas.
             </p>
-            <div class="hero-btns-side">
-                <a href="#ecosistema" class="btn-prim">Ver Ecosistema</a>
+
+            <!-- ✅ NUEVO: Dashboard Mockup (CSS) -->
+            <div class="hero-mockup reveal-delayed">
+                <div class="mockup-shell">
+                    <div class="mockup-bar">
+                        <div class="mockup-dot r"></div>
+                        <div class="mockup-dot y"></div>
+                        <div class="mockup-dot g"></div>
+                        <div class="mockup-url">apptransporte.onrender.com/home</div>
+                    </div>
+                    <div class="mockup-kpis">
+                        <div class="mk">
+                            <span class="mk-num" id="mk-viajes">47</span>
+                            <span class="mk-lbl">Viajes hoy</span>
+                        </div>
+                        <div class="mk">
+                            <span class="mk-num" style="color:var(--green);">12</span>
+                            <span class="mk-lbl">En ruta</span>
+                        </div>
+                        <div class="mk">
+                            <span class="mk-num">$0</span>
+                            <span class="mk-lbl">Errores</span>
+                        </div>
+                    </div>
+                    <div class="mockup-map">
+                        <div class="map-route"></div>
+                        <div class="map-pin a"></div>
+                        <div class="map-pin b"></div>
+                        <div class="map-label a">Planta Origen</div>
+                        <div class="map-label b">Obra Destino</div>
+                    </div>
+                    <div class="mockup-chart">
+                        <div class="bar" style="height:30%;"></div>
+                        <div class="bar" style="height:55%;"></div>
+                        <div class="bar active" style="height:80%;"></div>
+                        <div class="bar" style="height:65%;"></div>
+                        <div class="bar active" style="height:90%;"></div>
+                        <div class="bar" style="height:70%;"></div>
+                        <div class="bar" style="height:45%;"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- HERENCIA 25 AÑOS -->
+<div class="sec-divider"></div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  STATS COUNTER                                                        ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <span class="stat-num counting" data-target="90" data-suffix="%">0%</span>
+            <div class="stat-label">
+                <strong>Reducción de errores</strong>
+                en liquidaciones financieras
+            </div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num counting" data-target="2" data-prefix="< " data-suffix="h">0h</span>
+            <div class="stat-label">
+                <strong>Conciliación quincenal</strong>
+                vs. 2 días sin la plataforma
+            </div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num counting" data-target="100" data-suffix="%">0%</span>
+            <div class="stat-label">
+                <strong>Trazabilidad GPS</strong>
+                de cada viaje realizado
+            </div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num counting" data-target="15" data-suffix="min">0min</span>
+            <div class="stat-label">
+                <strong>Onboarding conductores</strong>
+                listos para operar
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  HERENCIA 25 AÑOS                                                     ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <section id="herencia" class="sec herencia-sec">
     <div class="sec-inner">
         <div class="herencia-grid">
@@ -113,7 +245,68 @@
     </div>
 </section>
 
-<!-- ECOSISTEMA / ROADMAP -->
+<div class="sec-divider"></div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  ✅ NUEVO: CÓMO FUNCIONA (3 pasos)                                    ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<section id="como-funciona" class="como-sec">
+    <div class="sec-inner">
+        <div class="como-head">
+            <div class="chip">Sin complicaciones</div>
+            <h2 class="sec-title">Operativo en<br><em class="grad">menos de una semana.</em></h2>
+            <p class="sec-sub" style="margin: 0 auto;">Implementación sin servidores propios, sin personal técnico y sin interrumpir su operación actual.</p>
+        </div>
+        <div class="como-steps">
+            <!-- Paso 1 -->
+            <div class="step-card reveal">
+                <span class="step-num">01</span>
+                <span class="step-ico">⚙️</span>
+                <h3>Configuración Inicial</h3>
+                <p>Cargamos sus datos maestros: equipos, rutas, materiales y tarifas. Generamos e imprimimos los QR de cada vehículo de su flota.</p>
+                <span class="step-tag">1–2 días · OptiCore lo hace</span>
+            </div>
+
+            <!-- Flecha -->
+            <div class="step-connector">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="step-card reveal">
+                <span class="step-num">02</span>
+                <span class="step-ico">🎓</span>
+                <h3>Capacitación Express</h3>
+                <p>Conductores listos en <strong>15 minutos</strong>. Administradores dominan todos los módulos en una sesión de 3 horas. Virtual o presencial.</p>
+                <span class="step-tag">3–4 horas · Semana 1</span>
+            </div>
+
+            <!-- Flecha -->
+            <div class="step-connector">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="step-card reveal">
+                <span class="step-num">03</span>
+                <span class="step-ico">🚀</span>
+                <h3>Go-Live & Operación</h3>
+                <p>Primera semana con acompañamiento activo de OptiCore. Desde la semana 2, operación autónoma completa con soporte dedicado.</p>
+                <span class="step-tag">Desde semana 2 · ROI inmediato</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  ECOSISTEMA / ROADMAP                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <section id="ecosistema" class="sec eco-sec">
     <div class="sec-inner">
         <div class="eco-head">
@@ -122,7 +315,6 @@
             <p class="sec-sub">Cada módulo comparte infraestructura, autenticación y lógica de datos. Conéctese hoy y escale sin fricciones con los siguientes.</p>
         </div>
         <div class="mods-grid">
-            <!-- M01 activo -->
             <div class="mod-card activo reveal">
                 <div class="mod-estado-badge activo-b"><span class="ed"></span> Activo en Producción</div>
                 <div class="mod-num">01</div>
@@ -136,9 +328,11 @@
                     <li>✓ OptiBot IA en lenguaje natural</li>
                     <li>✓ Torre de control y anomalías</li>
                 </ul>
-                <a href="https://apptransporte.onrender.com/home" class="btn-mod-activo" target="_blank">Entrar al Sistema <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="https://apptransporte.onrender.com/home" class="btn-mod-activo" target="_blank">
+                    Entrar al Sistema 
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
             </div>
-            <!-- M02 próximo -->
             <div class="mod-card proximo reveal">
                 <div class="mod-estado-badge proximo-b">🔜 Próximamente</div>
                 <div class="mod-num">02</div>
@@ -154,7 +348,6 @@
                 </ul>
                 <a href="#contacto" class="btn-mod-next">Registrar Interés →</a>
             </div>
-            <!-- M03 roadmap -->
             <div class="mod-card roadmap reveal">
                 <div class="mod-estado-badge roadmap-b">📍 En Roadmap</div>
                 <div class="mod-num">03</div>
@@ -178,7 +371,11 @@
     </div>
 </section>
 
-<!-- MÓDULO 01 DEEP DIVE -->
+<div class="sec-divider"></div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  MÓDULO 01 DEEP DIVE                                                  ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <section id="modulo-01" class="sec m01-sec">
     <div class="sec-inner">
         <div class="m01-head">
@@ -307,13 +504,55 @@
         <blockquote class="testimonial reveal">
             <div class="q-mark">"</div>
             <p>Con OptiCore IA, el tiempo que antes tardábamos en conciliar una semana de viajes se reduce de <strong>2 días a menos de 2 horas</strong>. La visibilidad que tenemos ahora es completamente distinta.</p>
-            <cite>— Operación Piloto · <strong>Nombre Empresa</strong></cite>
+            <cite>— Operación Piloto · <strong>MHC Colombia</strong></cite>
         </blockquote>
-
     </div>
 </section>
 
-<!-- CONSULTORÍA BI — SERVICIO SEPARADO -->
+<div class="sec-divider"></div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  ✅ NUEVO: DEMO CTA SECTION                                           ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<section class="demo-section">
+    <div class="demo-inner">
+        <div class="chip">Sin compromiso</div>
+        <h2 class="demo-title">Vea OptiCore IA<br><em class="grad">con sus propios datos.</em></h2>
+        <p class="demo-sub">Agende una demo de 30 minutos con nuestro equipo. Le mostramos el sistema en vivo, configurado con su flota y sus rutas reales.</p>
+        <div class="demo-btns">
+            <a href="https://wa.me/573007970199?text=Hola,%20quiero%20agendar%20una%20demo%20de%20OptiCore%20IA" target="_blank" class="btn-demo-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Agendar Demo por WhatsApp
+            </a>
+            <a href="#contacto" class="btn-demo-secondary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Formulario de Contacto
+            </a>
+        </div>
+        <div class="demo-trust">
+            <span class="trust-pill">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                Sin tarjeta de crédito
+            </span>
+            <span class="trust-pill">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                Respuesta en menos de 8 horas
+            </span>
+            <span class="trust-pill">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                Demo con datos reales de su operación
+            </span>
+        </div>
+    </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  CONSULTORÍA BI                                                        ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <section id="consultoria" class="sec bi-sec">
     <div class="sec-inner">
         <div class="bi-separador">
@@ -356,7 +595,11 @@
     </div>
 </section>
 
-<!-- CONTACTO -->
+<div class="sec-divider"></div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  CONTACTO                                                             ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <section id="contacto" class="sec contact-sec">
     <div class="sec-inner">
         <div class="contact-grid">
@@ -429,7 +672,9 @@
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  FOOTER                                                               ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <footer>
     <div class="footer-inner">
         <div class="footer-top">
@@ -443,6 +688,7 @@
                     <strong>Plataforma</strong>
                     <a href="#ecosistema">Ecosistema de Módulos</a>
                     <a href="#modulo-01">Módulo 01 · Transporte</a>
+                    <a href="#como-funciona">Cómo Funciona</a>
                     <a href="https://apptransporte.onrender.com/home" target="_blank">Entrar al Sistema</a>
                 </div>
                 <div class="footer-col">
@@ -466,6 +712,9 @@
     </div>
 </footer>
 
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  OPTIBOT WIDGET                                                       ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 <div id="optibot-widget" class="optibot-widget">
     <div id="optibot-window" class="optibot-window">
         <div class="optibot-header">
@@ -478,13 +727,11 @@
             </div>
             <button id="optibot-close" class="optibot-close">&times;</button>
         </div>
-        
         <div id="optibot-messages" class="optibot-messages">
             <div class="msg bot-msg">
-                Hola. Soy OptiBot, la inteligencia artificial de OptiCore Systems. ¿Tienes alguna duda sobre nuestros módulos de transporte o la consultoría en Power BI?
+                Hola. Soy OptiBot, la inteligencia artificial de OptiCore Systems. ¿Tiene alguna duda sobre el módulo de transporte o nuestra consultoría en Power BI?
             </div>
         </div>
-        
         <form id="optibot-form" class="optibot-input-area">
             <input type="text" id="optibot-input" placeholder="Escribe tu pregunta..." autocomplete="off" required>
             <button type="submit" id="optibot-send" aria-label="Enviar">
@@ -492,16 +739,63 @@
             </button>
         </form>
     </div>
-
     <button id="optibot-toggle" class="optibot-toggle">
         <span class="bot-icon">🤖</span>
         <span class="bot-tooltip">¿Preguntas?</span>
     </button>
 </div>
 
+<!-- Scripts -->
 <script src="js/canvas.js" defer></script>
 <script src="js/ui.js" defer></script>
 <script src="js/optibot.js" defer></script>
 
+<!-- ✅ NUEVO: Counter animation + extras -->
+<script>
+// ── STATS COUNTER ──────────────────────────────────────────────────────────
+(function() {
+    const counters = document.querySelectorAll('.stat-num[data-target]');
+    const duration = 1800;
+
+    function animateCounter(el) {
+        const target = parseFloat(el.dataset.target);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const start = performance.now();
+
+        function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // easeOutQuart
+            const ease = 1 - Math.pow(1 - progress, 4);
+            const current = Math.round(ease * target);
+            el.textContent = prefix + current + suffix;
+            if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+    }
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                animateCounter(e.target);
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => io.observe(c));
+})();
+
+// ── MOCKUP: número viajes animado ─────────────────────────────────────────
+(function() {
+    const el = document.getElementById('mk-viajes');
+    if (!el) return;
+    setInterval(() => {
+        const n = Math.floor(Math.random() * 10) + 44;
+        el.textContent = n;
+    }, 3000);
+})();
+</script>
 </body>
 </html>
