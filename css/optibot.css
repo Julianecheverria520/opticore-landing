@@ -195,3 +195,20 @@
         z-index: 2001;
     }
 }
+
+/* ==========================================================================
+   AÑADIDO DESDE MEJORAS: Optibot Animaciones Extra
+   ========================================================================== */
+.optibot-toggle {
+  animation: optibot-entrance .8s 3s both;
+}
+@keyframes optibot-entrance {
+  from { transform: scale(0) rotate(-180deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+.optibot-window {
+  box-shadow:
+    0 0 0 1px rgba(0,210,255,.15),
+    0 20px 60px rgba(0,0,0,.6),
+    0 0 80px rgba(0,210,255,.06);
+}

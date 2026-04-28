@@ -66,3 +66,27 @@ a { text-decoration: none; color: inherit; }
   z-index: 0; /* Asegura que esté por detrás */
   opacity: 0.65; /* Sube la opacidad a 0.65 para que las líneas azules se vean claras */
 }
+
+/* ==========================================================================
+   AÑADIDO DESDE MEJORAS: Scrollbar, Cursor y Cuadrícula de Fondo
+   ========================================================================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(0,210,255,.28); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,210,255,.5); }
+
+@media (pointer: fine) {
+  a, button, [role="button"] { cursor: pointer; }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,210,255,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,210,255,.028) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
