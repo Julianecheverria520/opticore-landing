@@ -43,15 +43,7 @@
   padding-left: 40px;
   min-width: 320px; /* Evitamos que el gráfico se aplaste de más */
 }
-.hero-h1 {
-  font-family: var(--fh);
-  font-size: clamp(2rem, 5vw, 4rem); 
-  font-weight: 800; 
-  line-height: 1.05; /* ✅ Interlineado más apretado para que se vea como un bloque */
-  letter-spacing: -0.04em; /* Letras un poquito más juntas */
-  margin-bottom: 26px;
-  animation: fdwn .9s .1s ease both;
-}
+
 
 /* Animaciones Originales Recuperadas */
 .hero-eyebrow {
