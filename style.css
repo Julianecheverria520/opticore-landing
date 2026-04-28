@@ -261,7 +261,7 @@ nav.on {
 /* Ajuste para el párrafo del Hero */
 .hero-p {
   font-size: 1.1rem;
-  max-width: 600px; /* Forzamos a que el párrafo sea un bloque más compacto */
+  max-width: 500px; /* Forzamos a que el párrafo sea un bloque más compacto */
   margin: 0 auto 42px;
 }
 
