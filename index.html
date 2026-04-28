@@ -466,6 +466,39 @@
     </div>
 </footer>
 
+<div id="optibot-widget" class="optibot-widget">
+    <div id="optibot-window" class="optibot-window">
+        <div class="optibot-header">
+            <div class="optibot-info">
+                <span class="bot-avatar">🤖</span>
+                <div class="bot-text">
+                    <strong>OptiBot IA</strong>
+                    <span>Asistente Comercial</span>
+                </div>
+            </div>
+            <button id="optibot-close" class="optibot-close">&times;</button>
+        </div>
+        
+        <div id="optibot-messages" class="optibot-messages">
+            <div class="msg bot-msg">
+                Hola. Soy OptiBot, la inteligencia artificial de OptiCore Systems. ¿Tienes alguna duda sobre nuestros módulos de transporte o la consultoría en Power BI?
+            </div>
+        </div>
+        
+        <form id="optibot-form" class="optibot-input-area">
+            <input type="text" id="optibot-input" placeholder="Escribe tu pregunta..." autocomplete="off" required>
+            <button type="submit" id="optibot-send" aria-label="Enviar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+        </form>
+    </div>
+
+    <button id="optibot-toggle" class="optibot-toggle">
+        <span class="bot-icon">🤖</span>
+        <span class="bot-tooltip">¿Preguntas?</span>
+    </button>
+</div>
+
 <script src="js/canvas.js" defer></script>
 <script src="js/ui.js" defer></script>
 <script src="js/optibot.js" defer></script>
