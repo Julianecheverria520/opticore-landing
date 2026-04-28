@@ -764,3 +764,60 @@ footer { background:var(--bg2); border-top:1px solid var(--card-b); position:rel
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
 }
+
+/* Estructura en dos columnas */
+.hero-inner-split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* Alineado a la izquierda */
+}
+
+.hero-left { flex: 1.2; }
+.hero-right { 
+    flex: 0.8; 
+    border-left: 1px solid var(--card-b); 
+    padding-left: 40px;
+}
+
+/* Efecto Máquina de Escribir para el H1 */
+.typing-effect {
+    overflow: hidden;
+    white-space: normal; /* Permite saltos de línea */
+    border-right: 3px solid var(--cyan); /* El cursor */
+    animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+    max-height: 500px;
+}
+
+/* Texto de la derecha con retraso */
+.reveal-delayed {
+    opacity: 0;
+    animation: fadeInRight 1s ease forwards;
+    animation-delay: 2.8s; /* Aparece justo después de que termine de "escribirse" el H1 */
+}
+
+/* Animaciones */
+@keyframes typing {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 500px; opacity: 1; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--cyan); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive: Volver a una columna en móviles */
+@media (max-width: 900px) {
+    .hero-inner-split { flex-direction: column; text-align: center; }
+    .hero-right { border-left: none; padding-left: 0; border-top: 1px solid var(--card-b); padding-top: 20px; }
+    .typing-effect { border-right: none; }
+}
