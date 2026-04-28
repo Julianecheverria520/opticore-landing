@@ -5,7 +5,6 @@ import os
 
 app = FastAPI()
 
-# Asegúrate de configurar tu API Key en las variables de entorno de Render
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class ChatRequest(BaseModel):
