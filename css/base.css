@@ -1,0 +1,68 @@
+/* ==========================================================================
+   1. BASE - Variables, Reseteos y Tipografía
+   ========================================================================== */
+
+:root {
+  /* Paleta de colores */
+  --cyan:         #00d2ff;
+  --cyan-hover:   #1de0ff;
+  --cyan-dim:     #0099cc;
+  --cyan-10:      rgba(0,210,255,.10);
+  --cyan-06:      rgba(0,210,255,.06);
+  --cyan-glow:    0 0 40px rgba(0,210,255,.22);
+  --coral:        #ff6b6b;
+  --coral-10:     rgba(255,107,107,.10);
+  --coral-06:     rgba(255,107,107,.06);
+  --green:        #00e676;
+  --red:          #ff5252;
+  
+  /* Fondos y superficies */
+  --bg:           #050810;
+  --bg2:          #090d1a;
+  --bg3:          #0d1220;
+  --card:         rgba(255,255,255,.03);
+  --card-b:       rgba(255,255,255,.07);
+  --card-hov:     rgba(0,210,255,.07);
+  
+  /* Textos */
+  --text:         #e8edf5;
+  --muted:        rgba(232,237,245,.52);
+  
+  /* Dimensiones y Tipografía */
+  --r:            14px;
+  --r-lg:         22px;
+  --nav-h:        90px; /* Aumentado para que el logo respire mejor */
+  --fh:           'Syne', sans-serif;
+  --fb:           'DM Sans', sans-serif;
+  --ease:         cubic-bezier(.4,0,.2,1);
+}
+
+/* Reseteo Universal */
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--fb);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* Fondo de constelación (Canvas) */
+#bg-canvas {
+  position: fixed; 
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; 
+  opacity: 0.35; /* Un poco más tenue para no cansar la vista */
+}

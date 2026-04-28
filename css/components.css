@@ -1,0 +1,114 @@
+/* ==========================================================================
+   3. COMPONENTES - Botones, Títulos, Textos y Etiquetas
+   ========================================================================== */
+
+/* Contenedor central - Ajustado para evitar textos alargados */
+.sec-inner {
+  max-width: 1100px; /* Antes 1180px */
+  margin: 0 auto;
+  padding: 0 7%; /* Más espacio a los lados */
+  position: relative; 
+  z-index: 1;
+}
+
+.sec { padding: 110px 0; }
+
+/* Títulos y Subtítulos */
+.sec-title {
+  font-family: var(--fh);
+  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.sec-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 56px;
+}
+
+/* Efectos de texto degradado */
+.grad {
+  background: linear-gradient(130deg, var(--cyan) 0%, #8ef5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.grad-coral {
+  background: linear-gradient(130deg, var(--coral) 0%, #ffb3b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Etiquetas (Chips) */
+.chip {
+  display: inline-block;
+  font-size: .72rem; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--cyan); background: var(--cyan-06);
+  border: 1px solid rgba(0,210,255,.22);
+  padding: 6px 16px; border-radius: 999px;
+  margin-bottom: 22px;
+}
+.chip-teal { color: var(--cyan); background: var(--cyan-06); border-color: rgba(0,210,255,.22); }
+.chip-coral { color: var(--coral); background: var(--coral-06); border-color: rgba(255,107,107,.22); }
+
+/* Enlaces con flecha */
+.link-arr {
+  display: inline-block; font-size: .92rem; font-weight: 500;
+  color: var(--cyan); margin-top: 24px;
+  transition: transform .25s var(--ease);
+}
+.link-arr:hover { transform: translateX(5px); }
+
+/* Animación global de Scroll (Reveal) */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .65s var(--ease), transform .65s var(--ease); }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* --- BOTONES GENERALES --- */
+.btn-cta-nav {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--cyan); color: var(--bg);
+  font-size: .86rem; font-weight: 600;
+  padding: 10px 20px; border-radius: 10px;
+  white-space: nowrap;
+  box-shadow: var(--cyan-glow);
+  transition: background .25s, transform .2s, box-shadow .3s;
+}
+.btn-cta-nav:hover { background: var(--cyan-hover); transform: scale(1.02); }
+
+.live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--bg);
+  animation: pulse 2s infinite;
+}
+
+.btn-prim {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--cyan); color: var(--bg);
+  font-size: .97rem; font-weight: 700;
+  padding: 14px 30px; border-radius: 12px;
+  box-shadow: var(--cyan-glow);
+  transition: background .25s, transform .2s, box-shadow .3s;
+}
+.btn-prim:hover { background: var(--cyan-hover); transform: translateY(-2px); box-shadow: 0 0 55px rgba(0,210,255,.38); }
+
+.btn-sec {
+  display: inline-flex; align-items: center;
+  background: transparent; color: var(--text);
+  font-size: .97rem; font-weight: 400;
+  padding: 14px 30px; border-radius: 12px;
+  border: 1px solid var(--card-b);
+  transition: border-color .25s, background .25s, transform .2s;
+}
+.btn-sec:hover { border-color: var(--cyan); background: var(--cyan-06); transform: translateY(-2px); }
+
+@keyframes pulse { 
+    0%, 100% { opacity: 1; transform: scale(1); } 
+    50% { opacity: .45; transform: scale(.8); } 
+}
