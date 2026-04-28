@@ -65,11 +65,11 @@
 /* Título con aparición desde abajo */
 .hero-h1 {
   font-family: var(--fh);
-  font-size: clamp(2rem, 3.5vw, 3.2rem); /* Letra más pequeña y equilibrada */
-  font-weight: 800; 
+  font-size: clamp(2rem, 5vw, 4rem); /* Letra más pequeña y equilibrada */
+  font-weight: 600; 
   line-height: 1.1;
   letter-spacing: -0.03em;
-  margin-bottom: 26px;
+  margin-bottom: 32px;
   animation: fdwn .9s .1s ease both;
 }
 
