@@ -2,7 +2,7 @@
    4. HOME - Estilos de las secciones del Landing Page
    ========================================================================== */
 
-/* --- HERO (Efecto Escritura 2 Columnas) --- */
+/* --- HERO (Efecto Aparición 2 Columnas) --- */
 .hero-sec {
   min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
@@ -28,13 +28,14 @@
   text-align: left;
 }
 
-.hero-left { flex: 1.2; }
+.hero-left { flex: 1.1; } /* Ligeramente más estrecho para equilibrar */
 .hero-right { 
-  flex: 0.8; 
+  flex: 0.9; /* Ligeramente más ancho */
   border-left: 1px solid var(--card-b); 
   padding-left: 40px;
 }
 
+/* Animaciones Originales Recuperadas */
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
   font-size: .78rem; font-weight: 500; letter-spacing: .08em;
@@ -42,6 +43,7 @@
   background: var(--cyan-06);
   padding: 7px 20px; border-radius: 999px;
   margin-bottom: 24px;
+  animation: fdwn .8s ease both; /* Recuperado */
 }
 
 .eyebrow-dot {
@@ -50,36 +52,31 @@
   animation: pulse 2s infinite;
 }
 
-/* Efecto Máquina de Escribir */
+/* Título con aparición desde abajo */
 .hero-h1 {
   font-family: var(--fh);
-  font-size: clamp(2.4rem, 5.5vw, 4.5rem); /* Un poco más balanceado */
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem); /* Tamaño reducido para no ser tan ancho */
   font-weight: 800; 
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   margin-bottom: 26px;
+  animation: fdwn .9s .1s ease both; /* Recuperado y ajustado delay */
 }
 
-.typing-effect {
-  overflow: hidden;
-  white-space: normal;
-  border-right: 3px solid var(--cyan); 
-  animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
-  max-height: 600px;
-}
-
+/* Texto de la derecha con aparición */
 .hero-p-side {
-  font-size: 1.1rem;
+  font-size: 1.05rem; /* Un poco más pequeño para mejor lectura */
   color: var(--muted);
   line-height: 1.7;
   margin-bottom: 30px;
 }
 
-/* Texto de la derecha con retraso */
 .reveal-delayed {
-  opacity: 0;
-  animation: fadeInRight 1s ease forwards;
-  animation-delay: 2.8s;
+  animation: fdwn 1s .3s ease both; /* Aparece un instante después del título */
+}
+
+.hero-btns-side {
+    animation: fdwn 1s .4s ease both; /* Los botones aparecen al final */
 }
 
 /* KPIs bajo el hero (Modificados para la nueva estructura) */
@@ -105,6 +102,8 @@
 @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--cyan); } }
 @keyframes fadeInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes fup  { from{opacity:0;transform:translateY(18px)}  to{opacity:1;transform:translateY(0)} }
+@keyframes fdwn { from{opacity:0;transform:translateY(-18px)} to{opacity:1;transform:translateY(0)} }
+
 
 
 /* --- HERENCIA (FoxPro a Nube) --- */
