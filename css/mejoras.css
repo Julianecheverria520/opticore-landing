@@ -284,6 +284,7 @@ body::before {
   line-height: 1;
   margin-bottom: 8px;
   letter-spacing: -0.03em;
+  white-space: nowrap; /* ✅ ESTO EVITA QUE SE ROMPA EL < 2h */
 }
 .stat-num.counting { 
   background: linear-gradient(135deg, var(--cyan), #8ef5ff);
