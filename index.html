@@ -465,31 +465,9 @@
     </div>
 </footer>
 
-<script>
-const cv=document.getElementById('bg-canvas'),cx=cv.getContext('2d');
-let pts=[];
-function sz(){cv.width=innerWidth;cv.height=innerHeight;}
-sz();addEventListener('resize',sz);
-class P{constructor(){this.reset();}reset(){this.x=Math.random()*cv.width;this.y=Math.random()*cv.height;this.r=Math.random()*1.2+.3;this.vx=(Math.random()-.5)*.22;this.vy=(Math.random()-.5)*.22;this.a=Math.random()*.38+.06;}tick(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>cv.width||this.y<0||this.y>cv.height)this.reset();}draw(){cx.beginPath();cx.arc(this.x,this.y,this.r,0,Math.PI*2);cx.fillStyle=`rgba(0,210,255,${this.a})`;cx.fill();}}
-for(let i=0;i<100;i++)pts.push(new P());
-(function loop(){cx.clearRect(0,0,cv.width,cv.height);pts.forEach(p=>{p.tick();p.draw();});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.hypot(dx,dy);if(d<82){cx.beginPath();cx.moveTo(pts[i].x,pts[i].y);cx.lineTo(pts[j].x,pts[j].y);cx.strokeStyle=`rgba(0,210,255,${.05*(1-d/82)})`;cx.lineWidth=.5;cx.stroke();}}requestAnimationFrame(loop);})();
+<script src="js/canvas.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/optibot.js" defer></script>
 
-const nav=document.getElementById('mainNav');
-addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>50));
-
-const burger=document.getElementById('burgerBtn'),mob=document.getElementById('mobMenu');
-burger.addEventListener('click',()=>{burger.classList.toggle('open');mob.classList.toggle('open');});
-mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');mob.classList.remove('open');}));
-
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');io.unobserve(x.target);}});},{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-document.getElementById('cForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const b=document.getElementById('submitBtn');
-    b.innerHTML='✓ Solicitud enviada — Le contactamos en menos de 24h';
-    b.style.background='#00c853';b.style.color='#fff';b.disabled=true;
-});
-</script>
 </body>
 </html>
