@@ -4,11 +4,12 @@
 
 /* --- HERO (Efecto Aparición 2 Columnas) --- */
 .hero-sec {
-  min-height: 100vh;
+
   display: flex; 
   align-items: center; 
   justify-content: center;
-  padding: 120px 5% 40px; /* Reducimos el espacio superior */
+ 
+  padding: 160px 5% 60px; 
   position: relative; 
   z-index: 1;
 }
