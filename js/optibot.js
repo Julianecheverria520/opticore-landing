@@ -52,29 +52,27 @@ if (btnToggle && chatWindow) {
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
         try {
-            // 3. Conexión a tu backend FastAPI (Reemplazar URL cuando esté lista)
-            /*
-            const response = await fetch('TU_URL_DE_FASTAPI_AQUI/chat', {
+            // Reemplaza esto con la URL real de tu backend en Render cuando lo subas
+            // Ejemplo: 'https://api-opticore.onrender.com/api/chat'
+            const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: userText })
             });
-            const data = await response.json();
-            */
             
-            // Simulación de espera de respuesta (Eliminar cuando conectes la API)
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            const data = { reply: "Entendido. Soy OptiBot, estoy en fase de conexión con los servidores de OptiCore. Por ahora, te invito a llenar el formulario de contacto o escribirnos por WhatsApp." };
+            if (!response.ok) throw new Error('Error en el servidor');
+            
+            const data = await response.json();
 
             // Eliminar mensaje de "escribiendo..."
             document.getElementById(typingId).remove();
 
-            // 4. Mostrar respuesta final del bot
+            // Mostrar respuesta final del bot
             addMessage(data.reply, 'bot');
 
         } catch (error) {
             document.getElementById(typingId).remove();
-            addMessage("Error de conexión. Nuestros sistemas están en mantenimiento.", 'bot');
+            addMessage("Error de conexión. Por favor usa el formulario o escríbenos por WhatsApp.", 'bot');
             console.error("Error OptiBot:", error);
         }
     });
