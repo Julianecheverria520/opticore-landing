@@ -215,3 +215,13 @@ body::before {
   text-transform: uppercase;
   color: rgba(0,210,255,.7);
 }
+.ticker-item span.dot {
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(0,210,255,.45);
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
