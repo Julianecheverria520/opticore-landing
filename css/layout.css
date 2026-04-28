@@ -178,3 +178,18 @@ body::before {
   pointer-events: none;
   z-index: 0;
 }
+
+.ticker-wrap {
+  position: fixed; 
+  top: 90px; /* Valor exacto para asegurar que quede debajo del menú */
+  left: 0; right: 0;
+  z-index: 998;
+  background: rgba(0,210,255,.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+  border-bottom: 1px solid rgba(0,210,255,.14);
+  overflow: hidden;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
