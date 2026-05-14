@@ -315,6 +315,30 @@
 }
 
 
+/* Diseño único por cada paso del proceso */
+.como-steps .step-card:nth-child(1) { border-left: 4px solid var(--cyan); }
+.como-steps .step-card:nth-child(2) { border-left: 4px solid #8e44ad; } /* Morado Tech */
+.como-steps .step-card:nth-child(3) { border-left: 4px solid #f39c12; } /* Naranja Peaje */
+.como-steps .step-card:nth-child(4) { border-left: 4px solid var(--green); }
+
+/* Ajuste para 4 columnas en desktop */
+@media (min-width: 1025px) {
+    .como-steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    .step-connector { display: none; } /* Quitamos las flechas para que las tarjetas respiren */
+}
+
+.step-card {
+    background: linear-gradient(145deg, var(--card), rgba(255,255,255,0.01));
+    transition: all 0.4s var(--ease);
+}
+
+.step-card:hover {
+    background: var(--card-hov);
+    box-shadow: 0 15px 45px rgba(0,210,255,0.1);
+}
 
 /* ==========================================================================
    AÑADIDO DESDE MEJORAS: Mockup, Stats, Pasos y Demo CTA

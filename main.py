@@ -12,12 +12,15 @@ class ChatRequest(BaseModel):
 
 # El conocimiento extraído de tu Dossier
 OPTICORE_KNOWLEDGE = """
-INFORMACIÓN BASE DE OPTICORE SYSTEMS IA:
-- ¿Qué es?: Es una plataforma SaaS de logística y transporte que conecta en tiempo real a los administradores de oficina con los conductores en campo[cite: 6].
-- Propuesta de valor: Reduce el tiempo de conciliación de viajes de 2 días a menos de 2 horas[cite: 7]. Elimina los vales en papel mediante un registro digital con código QR inviolable[cite: 13].
-- Funciones clave: GPS en tiempo real (incluso en zonas sin conexión) [cite: 28], preliquidaciones automáticas [cite: 25], evidencia fotográfica obligatoria [cite: 28], y alertas proactivas de documentos vencidos (SOAT, Tecnomecánica)[cite: 13, 37].
-- Implementación: No requiere costo de instalación ni hardware[cite: 69]. El onboarding toma 15 minutos para conductores[cite: 64].
-- Planes disponibles: TRIAL (evaluación gratuita hasta 50 viajes), PRO (para operaciones en crecimiento), y PLATINUM (para grandes constructoras con viajes ilimitados)[cite: 41].
+INFORMACIÓN AVANZADA DE OPTICORE SYSTEMS IA:
+- Manejo de Peajes: El sistema asocia automáticamente los costos de peajes a las rutas, permitiendo una liquidación exacta que incluye estos gastos operativos.
+- Registro Preoperacional: Antes de iniciar la jornada, el conductor debe completar un formulario digital de preguntas personalizables sobre el estado del vehículo.
+- Nuevo Rol de Despachador: Interfaz optimizada para el personal en planta que gestiona el flujo de salida y entrada.
+- Tecnología OCR e IA: 
+    1. Lectura de Placas: El despachador usa la cámara para identificar la máquina por OCR y asignar la ruta.
+    2. Escaneo de Recibos: Al finalizar, el sistema escanea mediante IA los recibos de gastos y guarda la información automáticamente.
+- Hardware y Salidas: Integración con impresoras Bluetooth para la entrega inmediata del tiquete físico de viaje al conductor.
+- Cierre de Viaje: Uso de lectura de códigos QR/COR para finalizar recorridos y asegurar la integridad de la data.
 """
 
 # Las reglas de comportamiento del Bot
