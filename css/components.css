@@ -1,43 +1,45 @@
 /* ==========================================================================
-   3. COMPONENTES - Botones, Títulos, Textos y Etiquetas
+   COMPONENTS — Botones, Chips, Títulos, Animaciones globales
+   OptiCore Systems IA v3.0
    ========================================================================== */
 
-/* Contenedor central - Ajustado para evitar textos alargados */
+/* ── CONTENEDOR CENTRAL ── */
 .sec-inner {
-  max-width: 1100px; /* Antes 1180px */
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 7%; /* Más espacio a los lados */
-  position: relative; 
+  padding: 0 7%;
+  position: relative;
   z-index: 1;
 }
 
-.sec { padding: 110px 0; }
+.sec { padding: 100px 0; }
 
-/* Títulos y Subtítulos */
+/* ── TIPOGRAFÍA ── */
 .sec-title {
   font-family: var(--fh);
   font-size: clamp(1.9rem, 3.8vw, 3.1rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
-  margin-bottom: 18px;
+  margin-bottom: var(--space-md);
 }
 
 .sec-sub {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--muted);
-  max-width: 560px;
+  max-width: 540px;
   line-height: 1.7;
-  margin-bottom: 56px;
+  margin-bottom: 48px;
 }
 
-/* Efectos de texto degradado */
+/* ── DEGRADADOS DE TEXTO ── */
 .grad {
   background: linear-gradient(130deg, var(--cyan) 0%, #8ef5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .grad-coral {
   background: linear-gradient(130deg, var(--coral) 0%, #ffb3b3 100%);
   -webkit-background-clip: text;
@@ -45,94 +47,208 @@
   background-clip: text;
 }
 
-/* Etiquetas (Chips) */
+/* ── CHIPS / BADGES ── */
 .chip {
-  display: inline-block;
-  font-size: .72rem; font-weight: 500;
-  letter-spacing: .14em; text-transform: uppercase;
-  color: var(--cyan); background: var(--cyan-06);
-  border: 1px solid rgba(0,210,255,.22);
-  padding: 6px 16px; border-radius: 999px;
-  margin-bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: var(--cyan-06);
+  border: 1px solid rgba(0, 210, 255, 0.22);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
 }
-.chip-teal { color: var(--cyan); background: var(--cyan-06); border-color: rgba(0,210,255,.22); }
-.chip-coral { color: var(--coral); background: var(--coral-06); border-color: rgba(255,107,107,.22); }
 
-/* Enlaces con flecha */
+.chip-teal  { color: var(--cyan);  background: var(--cyan-06);  border-color: rgba(0, 210, 255, 0.22); }
+.chip-coral { color: var(--coral); background: var(--coral-06); border-color: rgba(255, 107, 107, 0.22); }
+
+/* ── LINKS CON FLECHA ── */
 .link-arr {
-  display: inline-block; font-size: .92rem; font-weight: 500;
-  color: var(--cyan); margin-top: 24px;
-  transition: transform .25s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--cyan);
+  margin-top: var(--space-lg);
+  transition: gap 0.25s var(--ease);
 }
-.link-arr:hover { transform: translateX(5px); }
+.link-arr:hover { gap: 10px; }
 
-/* Animación global de Scroll (Reveal) */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity .65s var(--ease), transform .65s var(--ease); }
-.reveal.revealed { opacity: 1; transform: translateY(0); }
+/* ── ANIMACIÓN SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-/* --- BOTONES GENERALES --- */
+/* Stagger para grids */
+.reveal:nth-child(2) { transition-delay: 0.08s; }
+.reveal:nth-child(3) { transition-delay: 0.16s; }
+.reveal:nth-child(4) { transition-delay: 0.24s; }
+
+/* ── DIVIDER ── */
+.sec-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 210, 255, 0.3), transparent);
+  position: relative;
+}
+.sec-divider::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 8px;
+  background: radial-gradient(ellipse, rgba(0, 210, 255, 0.4), transparent);
+  border-radius: 50%;
+}
+
+/* ── BOTONES ── */
+
+/* Shimmer — definido UNA sola vez */
+@keyframes shimmer {
+  0%        { left: -100%; }
+  60%, 100% { left: 150%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(0.8); }
+}
+
+/* Botón primario */
+.btn-prim {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-family: var(--fb);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 12px;
+  box-shadow: var(--cyan-glow);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.3s;
+}
+.btn-prim::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50px; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg);
+  animation: shimmer 4s 2s infinite;
+}
+.btn-prim:hover {
+  background: var(--cyan-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 0 55px rgba(0, 210, 255, 0.38);
+}
+
+/* Botón secundario */
+.btn-sec {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--fb);
+  font-size: 0.95rem;
+  font-weight: 400;
+  padding: 13px 28px;
+  border-radius: 12px;
+  border: 1px solid var(--card-b);
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+}
+.btn-sec:hover {
+  border-color: var(--cyan);
+  background: var(--cyan-06);
+  transform: translateY(-2px);
+}
+
+/* Botón CTA nav */
 .btn-cta-nav {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--cyan); color: var(--bg);
-  font-size: .86rem; font-weight: 600;
-  padding: 10px 20px; border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 10px;
   white-space: nowrap;
   box-shadow: var(--cyan-glow);
-  transition: background .25s, transform .2s, box-shadow .3s;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s, transform 0.2s;
+}
+.btn-cta-nav::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50px; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg);
+  animation: shimmer 4s 1s infinite;
 }
 .btn-cta-nav:hover { background: var(--cyan-hover); transform: scale(1.02); }
 
 .live-dot {
-  width: 7px; height: 7px; border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
   background: var(--bg);
   animation: pulse 2s infinite;
+  flex-shrink: 0;
 }
 
-.btn-prim {
-  display: inline-flex; align-items: center; gap: 9px;
-  background: var(--cyan); color: var(--bg);
-  font-size: .97rem; font-weight: 700;
-  padding: 14px 30px; border-radius: 12px;
+/* Botón submit */
+.btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--cyan);
+  color: var(--bg);
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-family: var(--fb);
+  font-size: 0.95rem;
+  font-weight: 700;
   box-shadow: var(--cyan-glow);
-  transition: background .25s, transform .2s, box-shadow .3s;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s, transform 0.2s;
 }
-.btn-prim:hover { background: var(--cyan-hover); transform: translateY(-2px); box-shadow: 0 0 55px rgba(0,210,255,.38); }
-
-.btn-sec {
-  display: inline-flex; align-items: center;
-  background: transparent; color: var(--text);
-  font-size: .97rem; font-weight: 400;
-  padding: 14px 30px; border-radius: 12px;
-  border: 1px solid var(--card-b);
-  transition: border-color .25s, background .25s, transform .2s;
+.btn-submit::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50px; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg);
+  animation: shimmer 4s 3s infinite;
 }
-.btn-sec:hover { border-color: var(--cyan); background: var(--cyan-06); transform: translateY(-2px); }
-
-@keyframes pulse { 
-    0%, 100% { opacity: 1; transform: scale(1); } 
-    50% { opacity: .45; transform: scale(.8); } 
-}
-
-/* ==========================================================================
-   AÑADIDO DESDE MEJORAS: Divisor y Brillo de Botones
-   ========================================================================== */
-.sec-divider {
-  width: 100%; height: 1px; margin: 0; position: relative;
-  background: linear-gradient(90deg, transparent, rgba(0,210,255,.3), transparent);
-}
-.sec-divider::after {
-  content: ''; position: absolute; top: -4px; left: 50%; transform: translateX(-50%);
-  width: 60px; height: 8px; border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(0,210,255,.4), transparent);
-}
-
-.btn-prim, .btn-cta-nav, .btn-mod-activo, .btn-submit { position: relative; overflow: hidden; }
-.btn-prim::after, .btn-cta-nav::after, .btn-mod-activo::after, .btn-submit::after {
-  content: ''; position: absolute; top: 0; left: -100%; width: 50px; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
-  transform: skewX(-20deg); animation: shimmer 4s 2s infinite;
-}
-@keyframes shimmer {
-  0%   { left: -100%; }
-  60%, 100% { left: 150%; }
+.btn-submit:hover { background: var(--cyan-hover); transform: translateY(-2px); }
+.btn-submit:disabled {
+  background: var(--green);
+  cursor: default;
+  transform: none;
 }
