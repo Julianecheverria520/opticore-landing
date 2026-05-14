@@ -1,793 +1,785 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiCore Systems IA | Ingeniería de Datos + IA para el Sector Constructor</title>
-    <meta name="description" content="25 años de lógica ERP aplicada a la era de la IA. Plataforma SaaS de gestión logística, consultoría en Power BI y modernización de sistemas legados para el sector de la construcción.">
-    <!-- OG Tags para LinkedIn / WhatsApp -->
-    <meta property="og:title" content="OptiCore Systems IA — Logística de Construcción con IA">
-    <meta property="og:description" content="Controla cada viaje de tu flota en tiempo real. GPS, preliquidaciones automáticas y OptiBot IA. Cero papel, cero errores.">
-    <meta property="og:image" content="https://apptransporte.onrender.com/og-image.png">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>OptiCore Systems IA | Logística e IA para el Sector Constructor</title>
+  <meta name="description" content="25 años de lógica ERP aplicada a la era de la IA. Plataforma SaaS de gestión logística, consultoría en Power BI y modernización de sistemas legados para el sector de la construcción en Colombia.">
 
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/optibot.css">
+  <!-- OG / Social -->
+  <meta property="og:title"       content="OptiCore Systems IA — Logística de Construcción con IA">
+  <meta property="og:description" content="Controla cada viaje de tu flota en tiempo real. GPS, preliquidaciones automáticas y OptiBot IA. Cero papel, cero errores.">
+  <meta property="og:image"       content="https://apptransporte.onrender.com/og-image.png">
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="es_CO">
+  <meta name="twitter:card"       content="summary_large_image">
 
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "OptiCore Systems IA",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "priceCurrency": "COP" },
+    "description": "Plataforma SaaS de gestión logística con IA para el sector de la construcción en Colombia.",
+    "url": "https://apptransporte.onrender.com"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/optibot.css">
+  <!-- mejoras.css YA NO SE NECESITA: todo está integrado en los archivos anteriores -->
 </head>
 <body>
 
-<canvas id="bg-canvas"></canvas>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  NAV                                                                  ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<nav id="mainNav">
-    <div class="nav-inner">
-        <a href="#inicio" class="logo-wrap" style="display:flex;align-items:center;">
-            <img src="logo.png" alt="OptiCore Systems IA" class="nav-logo">
-        </a>
-        <ul class="nav-links">
-            <li><a href="#herencia">Nuestra Historia</a></li>
-            <li><a href="#ecosistema">Ecosistema</a></li>
-            <li><a href="#modulo-01">Módulo Transporte</a></li>
-            <li><a href="#consultoria">Consultoría BI</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-        <a href="https://apptransporte.onrender.com/home" class="btn-cta-nav" target="_blank">
-            <span class="live-dot"></span>Entrar al Sistema
-        </a>
-        <button class="burger" id="burgerBtn" aria-label="Menú">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
+<!-- ╔══ NAV ══╗ -->
+<nav id="mainNav" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="#inicio" class="logo-wrap" aria-label="OptiCore Systems IA — Inicio">
+      <img src="logo.png" alt="OptiCore Systems IA" class="nav-logo" width="140" height="52">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#herencia">Nuestra Historia</a></li>
+      <li><a href="#ecosistema">Ecosistema</a></li>
+      <li><a href="#modulo-01">Módulo Transporte</a></li>
+      <li><a href="#consultoria">Consultoría BI</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://apptransporte.onrender.com/home"
+       class="btn-cta-nav"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Entrar al sistema OptiCore (se abre en nueva pestaña)">
+      <span class="live-dot" aria-hidden="true"></span>Entrar al Sistema
+    </a>
+    <button class="burger"
+            id="burgerBtn"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="mobMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
 </nav>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  TICKER BAR                                                           ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<div class="ticker-wrap">
-    <div class="ticker-inner">
-        <!-- Duplicar el contenido para loop continuo -->
-        <span class="ticker-item"><span class="dot"></span>GPS en Tiempo Real</span>
-        <span class="ticker-item"><span class="dot"></span>Preliquidaciones Automáticas</span>
-        <span class="ticker-item"><span class="dot"></span>OptiBot IA</span>
-        <span class="ticker-item"><span class="dot"></span>Cero Vales en Papel</span>
-        <span class="ticker-item"><span class="dot"></span>Control de Vencimientos SOAT</span>
-        <span class="ticker-item"><span class="dot"></span>Conciliación en 2 Horas</span>
-        <span class="ticker-item"><span class="dot"></span>App Móvil PWA sin Descarga</span>
-        <span class="ticker-item"><span class="dot"></span>Torre de Control Predictivo</span>
-        <span class="ticker-item"><span class="dot"></span>Multi-empresa · Multi-tenant</span>
-        <span class="ticker-item"><span class="dot"></span>FastAPI + PostgreSQL + GPT-4o</span>
-        <span class="ticker-item"><span class="dot"></span>Escaneo OCR de Placas</span>
-        <span class="ticker-item"><span class="dot"></span>Impresión Bluetooth de Tiquetes</span>
-        <span class="ticker-item"><span class="dot"></span>Preoperacional Digital</span>
-        <span class="ticker-item"><span class="dot"></span>IA Receipt Scanner</span>
-        <!-- Copia para loop -->
-        <span class="ticker-item"><span class="dot"></span>GPS en Tiempo Real</span>
-        <span class="ticker-item"><span class="dot"></span>Preliquidaciones Automáticas</span>
-        <span class="ticker-item"><span class="dot"></span>OptiBot IA</span>
-        <span class="ticker-item"><span class="dot"></span>Cero Vales en Papel</span>
-        <span class="ticker-item"><span class="dot"></span>Control de Vencimientos SOAT</span>
-        <span class="ticker-item"><span class="dot"></span>Conciliación en 2 Horas</span>
-        <span class="ticker-item"><span class="dot"></span>App Móvil PWA sin Descarga</span>
-        <span class="ticker-item"><span class="dot"></span>Torre de Control Predictivo</span>
-        <span class="ticker-item"><span class="dot"></span>Multi-empresa · Multi-tenant</span>
-        <span class="ticker-item"><span class="dot"></span>FastAPI + PostgreSQL + GPT-4o</span>
-        <span class="ticker-item"><span class="dot"></span>Escaneo OCR de Placas</span>
-        <span class="ticker-item"><span class="dot"></span>Impresión Bluetooth de Tiquetes</span>
-        <span class="ticker-item"><span class="dot"></span>Preoperacional Digital</span>
-        <span class="ticker-item"><span class="dot"></span>IA Receipt Scanner</span>
-    </div>
+<!-- Ticker animado -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="dot"></span>GPS en Tiempo Real</span>
+    <span class="ticker-item"><span class="dot"></span>Preliquidaciones Automáticas</span>
+    <span class="ticker-item"><span class="dot"></span>OptiBot IA</span>
+    <span class="ticker-item"><span class="dot"></span>Cero Vales en Papel</span>
+    <span class="ticker-item"><span class="dot"></span>Control de Vencimientos SOAT</span>
+    <span class="ticker-item"><span class="dot"></span>Conciliación en 2 Horas</span>
+    <span class="ticker-item"><span class="dot"></span>App Móvil PWA sin Descarga</span>
+    <span class="ticker-item"><span class="dot"></span>Torre de Control Predictivo</span>
+    <span class="ticker-item"><span class="dot"></span>Multi-empresa · Multi-tenant</span>
+    <span class="ticker-item"><span class="dot"></span>FastAPI + PostgreSQL + GPT-4o</span>
+    <span class="ticker-item"><span class="dot"></span>Escaneo OCR de Placas</span>
+    <span class="ticker-item"><span class="dot"></span>Impresión Bluetooth de Tiquetes</span>
+    <span class="ticker-item"><span class="dot"></span>Preoperacional Digital</span>
+    <span class="ticker-item"><span class="dot"></span>IA Receipt Scanner</span>
+    <!-- Copia para loop continuo -->
+    <span class="ticker-item"><span class="dot"></span>GPS en Tiempo Real</span>
+    <span class="ticker-item"><span class="dot"></span>Preliquidaciones Automáticas</span>
+    <span class="ticker-item"><span class="dot"></span>OptiBot IA</span>
+    <span class="ticker-item"><span class="dot"></span>Cero Vales en Papel</span>
+    <span class="ticker-item"><span class="dot"></span>Control de Vencimientos SOAT</span>
+    <span class="ticker-item"><span class="dot"></span>Conciliación en 2 Horas</span>
+    <span class="ticker-item"><span class="dot"></span>App Móvil PWA sin Descarga</span>
+    <span class="ticker-item"><span class="dot"></span>Torre de Control Predictivo</span>
+    <span class="ticker-item"><span class="dot"></span>Multi-empresa · Multi-tenant</span>
+    <span class="ticker-item"><span class="dot"></span>FastAPI + PostgreSQL + GPT-4o</span>
+    <span class="ticker-item"><span class="dot"></span>Escaneo OCR de Placas</span>
+    <span class="ticker-item"><span class="dot"></span>Impresión Bluetooth de Tiquetes</span>
+    <span class="ticker-item"><span class="dot"></span>Preoperacional Digital</span>
+    <span class="ticker-item"><span class="dot"></span>IA Receipt Scanner</span>
+  </div>
 </div>
 
-<div class="mob-menu" id="mobMenu">
-    <a href="#herencia">Nuestra Historia</a>
-    <a href="#ecosistema">Ecosistema</a>
-    <a href="#modulo-01">Módulo Transporte</a>
-    <a href="#consultoria">Consultoría BI</a>
-    <a href="#contacto">Contacto</a>
-    <a href="https://apptransporte.onrender.com/home" class="mob-cta" target="_blank">Entrar al Sistema →</a>
-</div>
+<!-- Menú móvil -->
+<nav class="mob-menu" id="mobMenu" aria-label="Menú móvil" hidden>
+  <a href="#herencia">Nuestra Historia</a>
+  <a href="#ecosistema">Ecosistema</a>
+  <a href="#modulo-01">Módulo Transporte</a>
+  <a href="#consultoria">Consultoría BI</a>
+  <a href="#contacto">Contacto</a>
+  <a href="https://apptransporte.onrender.com/home"
+     class="mob-cta"
+     target="_blank"
+     rel="noopener noreferrer">Entrar al Sistema →</a>
+</nav>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  HERO                                                                 ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<header id="inicio" class="hero-sec">
+<!-- ╔══ CONTENIDO PRINCIPAL ══╗ -->
+<main id="main-content">
+
+  <!-- ╔══ HERO ══╗ -->
+  <header id="inicio" class="hero-sec">
     <div class="hero-inner-split">
-        <div class="hero-left">
-            <div class="hero-eyebrow">
-                <span class="eyebrow-dot"></span>
-                Colombia · SaaS + IA · 2026
-            </div>
-            <h1 class="hero-h1">
-                Más de 25 años de lógica de negocio.<br>
-                <em class="grad">Ahora con inteligencia artificial.</em>
-            </h1>
-            <div class="hero-btns-side" style="margin-top: 28px;">
-                <a href="#ecosistema" class="btn-prim">Ver Ecosistema</a>
-                <a href="#modulo-01" class="btn-sec" style="margin-left:12px;">Módulo Transporte →</a>
-            </div>
+      <div class="hero-left">
+        <p class="hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Colombia · SaaS + IA · 2026
+        </p>
+        <h1 class="hero-h1">
+          Más de 25 años de lógica de negocio.<br>
+          <em class="grad">Ahora con inteligencia artificial.</em>
+        </h1>
+        <div class="hero-btns-side">
+          <a href="#ecosistema" class="btn-prim">Ver Ecosistema</a>
+          <a href="#modulo-01" class="btn-sec" style="margin-left:12px;">Módulo Transporte →</a>
         </div>
+      </div>
 
-        <div class="hero-right">
-            <!-- Párrafo original -->
-            <p class="hero-p-side reveal-delayed">
-                Automatizamos procesos críticos con IA generativa, manteniendo las reglas de negocio que han funcionado por décadas.
-            </p>
-
-            <!-- ✅ NUEVO: Dashboard Mockup (CSS) -->
-            <div class="hero-mockup reveal-delayed">
-                <div class="mockup-shell">
-                    <div class="mockup-bar">
-                        <div class="mockup-dot r"></div>
-                        <div class="mockup-dot y"></div>
-                        <div class="mockup-dot g"></div>
-                        <div class="mockup-url">apptransporte.onrender.com/home</div>
-                    </div>
-                    <div class="mockup-kpis">
-                        <div class="mk">
-                            <span class="mk-num" id="mk-viajes">47</span>
-                            <span class="mk-lbl">Viajes hoy</span>
-                        </div>
-                        <div class="mk">
-                            <span class="mk-num" style="color:var(--green);">12</span>
-                            <span class="mk-lbl">En ruta</span>
-                        </div>
-                        <div class="mk">
-                            <span class="mk-num">$0</span>
-                            <span class="mk-lbl">Errores</span>
-                        </div>
-                    </div>
-                    <div class="mockup-map">
-                        <div class="map-route"></div>
-                        <div class="map-pin a"></div>
-                        <div class="map-pin b"></div>
-                        <div class="map-label a">Origen</div>
-                        <div class="map-label b">Destino</div>
-                    </div>
-                    <div class="mockup-chart">
-                        <div class="bar" style="height:30%;"></div>
-                        <div class="bar" style="height:55%;"></div>
-                        <div class="bar active" style="height:80%;"></div>
-                        <div class="bar" style="height:65%;"></div>
-                        <div class="bar active" style="height:90%;"></div>
-                        <div class="bar" style="height:70%;"></div>
-                        <div class="bar" style="height:45%;"></div>
-                    </div>
-                </div>
+      <div class="hero-right" aria-hidden="true">
+        <p class="hero-p-side reveal-delayed">
+          Automatizamos procesos críticos con IA generativa, manteniendo las reglas de negocio que han funcionado por décadas.
+        </p>
+        <!-- Dashboard Mockup decorativo -->
+        <div class="hero-mockup reveal-delayed">
+          <div class="mockup-shell">
+            <div class="mockup-bar">
+              <div class="mockup-dot r"></div>
+              <div class="mockup-dot y"></div>
+              <div class="mockup-dot g"></div>
+              <div class="mockup-url">apptransporte.onrender.com/home</div>
             </div>
+            <div class="mockup-kpis">
+              <div class="mk">
+                <span class="mk-num" id="mk-viajes">47</span>
+                <span class="mk-lbl">Viajes hoy</span>
+              </div>
+              <div class="mk">
+                <span class="mk-num" style="color:var(--green);">12</span>
+                <span class="mk-lbl">En ruta</span>
+              </div>
+              <div class="mk">
+                <span class="mk-num">$0</span>
+                <span class="mk-lbl">Errores</span>
+              </div>
+            </div>
+            <div class="mockup-map">
+              <div class="map-route"></div>
+              <div class="map-pin a"></div>
+              <div class="map-pin b"></div>
+              <div class="map-label a">Origen</div>
+              <div class="map-label b">Destino</div>
+            </div>
+            <div class="mockup-chart" aria-hidden="true">
+              <div class="bar" style="height:30%"></div>
+              <div class="bar" style="height:55%"></div>
+              <div class="bar active" style="height:80%"></div>
+              <div class="bar" style="height:65%"></div>
+              <div class="bar active" style="height:90%"></div>
+              <div class="bar" style="height:70%"></div>
+              <div class="bar" style="height:45%"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</header>
+  </header>
 
-<div class="sec-divider"></div>
+  <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  STATS COUNTER                                                        ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<section class="stats-section">
+  <!-- ╔══ STATS ══╗ -->
+  <section aria-label="Métricas clave de la plataforma" class="stats-section">
     <div class="stats-grid">
-        <div class="stat-item">
-            <span class="stat-num counting" data-target="90" data-suffix="%">0%</span>
-            <div class="stat-label">
-                <strong>Reducción de errores</strong>
-                en liquidaciones financieras
-            </div>
-        </div>
-        <div class="stat-item">
-            <span class="stat-num counting" data-target="2" data-prefix="< " data-suffix="h">0h</span>
-            <div class="stat-label">
-                <strong>Conciliación quincenal</strong>
-                vs. 2 días sin la plataforma
-            </div>
-        </div>
-        <div class="stat-item">
-            <span class="stat-num counting" data-target="100" data-suffix="%">0%</span>
-            <div class="stat-label">
-                <strong>Trazabilidad GPS</strong>
-                de cada viaje realizado
-            </div>
-        </div>
-        <div class="stat-item">
-            <span class="stat-num counting" data-target="15" data-suffix="min">0min</span>
-            <div class="stat-label">
-                <strong>Onboarding conductores</strong>
-                listos para operar
-            </div>
-        </div>
+      <div class="stat-item">
+        <span class="stat-num counting" data-target="90" data-suffix="%" aria-label="90 por ciento">0%</span>
+        <div class="stat-label"><strong>Reducción de errores</strong>en liquidaciones financieras</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num counting" data-target="2" data-prefix="< " data-suffix="h" aria-label="menos de 2 horas">0h</span>
+        <div class="stat-label"><strong>Conciliación quincenal</strong>vs. 2 días sin la plataforma</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num counting" data-target="100" data-suffix="%" aria-label="100 por ciento">0%</span>
+        <div class="stat-label"><strong>Trazabilidad GPS</strong>de cada viaje realizado</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num counting" data-target="15" data-suffix="min" aria-label="15 minutos">0min</span>
+        <div class="stat-label"><strong>Onboarding conductores</strong>listos para operar</div>
+      </div>
     </div>
-</section>
+  </section>
 
-<div class="sec-divider"></div>
+  <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  HERENCIA 25 AÑOS                                                     ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<section id="herencia" class="sec herencia-sec">
+  <!-- ╔══ HERENCIA ══╗ -->
+  <section id="herencia" class="sec herencia-sec">
     <div class="sec-inner">
-        <div class="herencia-grid">
-            <div class="herencia-texto">
-                <div class="chip">Nuestra Herencia Tecnológica</div>
-                <h2 class="sec-title">De VisualFoxPro a la nube.<br><em class="grad">La lógica nunca se perdió.</em></h2>
-                <p>En <strong>OptiCore Systems IA</strong> venimos de construir sistemas ERP en Visual FoxPro que llevan más de <strong>25 años operando</strong> en empresas del sector real. Eso no es historia — es una ventaja competitiva que ningún startup puede replicar.</p>
-                <p>Mientras otros SaaS empiezan sin entender los procesos de negocio, nosotros tomamos la lógica ya validada en campo y la trasladamos a <strong>Python, FastAPI, PostgreSQL y GPT-4o</strong>. Sin fricciones, sin pérdida de conocimiento acumulado.</p>
-                <p>El módulo de Transporte es el primero del ecosistema. Hay más viniendo — construidos con la misma lógica probada.</p>
-                <a href="#ecosistema" class="link-arr">Ver el Ecosistema Completo →</a>
-            </div>
-            <div class="herencia-derecha">
-                <div class="hstat-grid">
-                    <div class="hstat reveal"><span class="hstat-num">25+</span><span class="hstat-lbl">Años desarrollando<br>lógica ERP en campo</span></div>
-                    <div class="hstat accent reveal"><span class="hstat-num">Visual FoxPro</span><span class="hstat-lbl">Sistema legado activo<br>en modernización</span></div>
-                    <div class="hstat reveal"><span class="hstat-num">GPT-4o</span><span class="hstat-lbl">Motor de IA<br>integrado al negocio</span></div>
-                    <div class="hstat accent reveal"><span class="hstat-num">SaaS</span><span class="hstat-lbl">Multi-tenant<br>infraestructura cloud</span></div>
-                </div>
-                <div class="erp-tl reveal">
-                    <div class="tl-step done">
-                        <div class="tl-dot"></div>
-                        <div class="tl-txt"><strong>ERP FoxPro</strong><span>Lógica de negocio · 25 años probada</span></div>
-                    </div>
-                    <div class="tl-line"></div>
-                    <div class="tl-step done">
-                        <div class="tl-dot"></div>
-                        <div class="tl-txt"><strong>Python + PostgreSQL + Cloud</strong><span>Backend moderno, misma lógica</span></div>
-                    </div>
-                    <div class="tl-line"></div>
-                    <div class="tl-step active">
-                        <div class="tl-dot pulse"></div>
-                        <div class="tl-txt"><strong>IA + SaaS Multi-módulo</strong><span>En construcción · Módulo 01 activo</span></div>
-                    </div>
-                </div>
-            </div>
+      <div class="herencia-grid">
+        <div class="herencia-texto">
+          <div class="chip">Nuestra Herencia Tecnológica</div>
+          <h2 class="sec-title">De VisualFoxPro a la nube.<br><em class="grad">La lógica nunca se perdió.</em></h2>
+          <p>En <strong>OptiCore Systems IA</strong> venimos de construir sistemas ERP en Visual FoxPro que llevan más de <strong>25 años operando</strong> en empresas del sector real.</p>
+          <p>Mientras otros SaaS empiezan sin entender los procesos de negocio, nosotros tomamos la lógica ya validada en campo y la trasladamos a <strong>Python, FastAPI, PostgreSQL y GPT-4o</strong>. Sin fricciones, sin pérdida de conocimiento acumulado.</p>
+          <p>El módulo de Transporte es el primero del ecosistema. Hay más viniendo — construidos con la misma lógica probada.</p>
+          <a href="#ecosistema" class="link-arr">Ver el Ecosistema Completo →</a>
         </div>
+        <div class="herencia-derecha">
+          <div class="hstat-grid">
+            <div class="hstat reveal"><span class="hstat-num">25+</span><span class="hstat-lbl">Años desarrollando<br>lógica ERP en campo</span></div>
+            <div class="hstat accent reveal"><span class="hstat-num">Visual FoxPro</span><span class="hstat-lbl">Sistema legado activo<br>en modernización</span></div>
+            <div class="hstat reveal"><span class="hstat-num">GPT-4o</span><span class="hstat-lbl">Motor de IA<br>integrado al negocio</span></div>
+            <div class="hstat accent reveal"><span class="hstat-num">SaaS</span><span class="hstat-lbl">Multi-tenant<br>infraestructura cloud</span></div>
+          </div>
+          <div class="erp-tl reveal">
+            <div class="tl-step done">
+              <div class="tl-dot" aria-hidden="true"></div>
+              <div class="tl-txt"><strong>ERP FoxPro</strong><span>Lógica de negocio · 25 años probada</span></div>
+            </div>
+            <div class="tl-line" aria-hidden="true"></div>
+            <div class="tl-step done">
+              <div class="tl-dot" aria-hidden="true"></div>
+              <div class="tl-txt"><strong>Python + PostgreSQL + Cloud</strong><span>Backend moderno, misma lógica</span></div>
+            </div>
+            <div class="tl-line" aria-hidden="true"></div>
+            <div class="tl-step active">
+              <div class="tl-dot pulse" aria-hidden="true"></div>
+              <div class="tl-txt"><strong>IA + SaaS Multi-módulo</strong><span>En construcción · Módulo 01 activo</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<div class="sec-divider"></div>
+  <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  ECOSISTEMA / ROADMAP                                                 ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<section id="ecosistema" class="sec eco-sec">
+  <!-- ╔══ ECOSISTEMA ══╗ -->
+  <section id="ecosistema" class="sec eco-sec">
     <div class="sec-inner">
-        <div class="eco-head">
-            <div class="chip">Ecosistema en Crecimiento</div>
-            <h2 class="sec-title">Una plataforma.<br><em class="grad">Múltiples módulos.</em></h2>
-            <p class="sec-sub">Cada módulo comparte infraestructura, autenticación y lógica de datos. Conéctese hoy y escale sin fricciones con los siguientes.</p>
-        </div>
-        <div class="mods-grid">
-            <div class="mod-card activo reveal">
-                <div class="mod-estado-badge activo-b"><span class="ed"></span> Activo en Producción</div>
-                <div class="mod-num">01</div>
-                <div class="mod-ico">🚛</div>
-                <h3>Gestión de Transporte</h3>
-                <p>Control logístico completo para flotas de materiales de construcción. GPS, preliquidaciones automáticas, OptiBot IA y auditoría digital.</p>
-                <ul class="mod-list">
-                    <li>✓ GPS en tiempo real</li>
-                    <li>✓ App móvil PWA — sin descarga</li>
-                    <li>✓ Preliquidaciones automáticas</li>
-                    <li>✓ OptiBot IA en lenguaje natural</li>
-                    <li>✓ Torre de control y anomalías</li>
-                </ul>
-                <a href="https://apptransporte.onrender.com/home" class="btn-mod-activo" target="_blank">
-                    Entrar al Sistema 
-                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
-            <div class="mod-card proximo reveal">
-                <div class="mod-estado-badge proximo-b">🔜 Próximamente</div>
-                <div class="mod-num">02</div>
-                <div class="mod-ico">🏗️</div>
-                <h3>Integración ERP Cloud</h3>
-                <p>Conexión entre el ERP legado (FoxPro) y dashboards modernos en la nube. Preserve su historial — agrégale inteligencia.</p>
-                <ul class="mod-list dim">
-                    <li>◦ Sincronización ERP ↔ Cloud</li>
-                    <li>◦ Dashboards Power BI en tiempo real</li>
-                    <li>◦ API REST sobre datos legados</li>
-                    <li>◦ Migración progresiva sin fricción</li>
-                    <li>◦ Trazabilidad histórica completa</li>
-                </ul>
-                <a href="#contacto" class="btn-mod-next">Registrar Interés →</a>
-            </div>
-            <div class="mod-card roadmap reveal">
-                <div class="mod-estado-badge roadmap-b">📍 En Roadmap</div>
-                <div class="mod-num">03</div>
-                <div class="mod-ico">📊</div>
-                <h3>Analytics & Reporting</h3>
-                <p>Centro de inteligencia unificado. KPIs de todas las áreas, reportes automáticos y modelos predictivos sobre la operación completa.</p>
-                <ul class="mod-list dim">
-                    <li>◦ Centro de KPIs multi-módulo</li>
-                    <li>◦ Reportes automáticos por rol</li>
-                    <li>◦ Predicción de costos y demanda</li>
-                    <li>◦ Exportación multi-formato</li>
-                    <li>◦ Alertas inteligentes por umbral</li>
-                </ul>
-                <a href="#contacto" class="btn-mod-next">Registrar Interés →</a>
-            </div>
-        </div>
-        <div class="eco-nota">
-            <span>💡</span>
-            <p>Conectarse hoy al Módulo 01 significa que los módulos siguientes estarán disponibles con un solo clic — sin migración, sin nuevas cuentas, sin pérdida de datos.</p>
-        </div>
+      <div class="eco-head">
+        <div class="chip">Ecosistema en Crecimiento</div>
+        <h2 class="sec-title">Una plataforma.<br><em class="grad">Múltiples módulos.</em></h2>
+        <p class="sec-sub">Cada módulo comparte infraestructura, autenticación y lógica de datos. Conéctese hoy y escale sin fricciones con los siguientes.</p>
+      </div>
+      <div class="mods-grid">
+        <article class="mod-card activo reveal">
+          <div class="mod-estado-badge activo-b"><span class="ed" aria-hidden="true"></span> Activo en Producción</div>
+          <div class="mod-num" aria-hidden="true">01</div>
+          <div class="mod-ico" aria-hidden="true">🚛</div>
+          <h3>Gestión de Transporte</h3>
+          <p>Control logístico completo para flotas de materiales de construcción. GPS, preliquidaciones automáticas, OptiBot IA y auditoría digital.</p>
+          <ul class="mod-list">
+            <li>✓ GPS en tiempo real</li>
+            <li>✓ App móvil PWA — sin descarga</li>
+            <li>✓ Preliquidaciones automáticas</li>
+            <li>✓ OptiBot IA en lenguaje natural</li>
+            <li>✓ Torre de control y anomalías</li>
+          </ul>
+          <a href="https://apptransporte.onrender.com/home"
+             class="btn-mod-activo"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Entrar al sistema de Gestión de Transporte (se abre en nueva pestaña)">
+            Entrar al Sistema
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="mod-card proximo reveal">
+          <div class="mod-estado-badge proximo-b">🔜 Próximamente</div>
+          <div class="mod-num" aria-hidden="true">02</div>
+          <div class="mod-ico" aria-hidden="true">🏗️</div>
+          <h3>Integración ERP Cloud</h3>
+          <p>Conexión entre el ERP legado (FoxPro) y dashboards modernos en la nube. Preserve su historial — agrégale inteligencia.</p>
+          <ul class="mod-list dim">
+            <li>◦ Sincronización ERP ↔ Cloud</li>
+            <li>◦ Dashboards Power BI en tiempo real</li>
+            <li>◦ API REST sobre datos legados</li>
+            <li>◦ Migración progresiva sin fricción</li>
+            <li>◦ Trazabilidad histórica completa</li>
+          </ul>
+          <a href="#contacto" class="btn-mod-next">Registrar Interés →</a>
+        </article>
+
+        <article class="mod-card roadmap reveal">
+          <div class="mod-estado-badge roadmap-b">📍 En Roadmap</div>
+          <div class="mod-num" aria-hidden="true">03</div>
+          <div class="mod-ico" aria-hidden="true">📊</div>
+          <h3>Analytics &amp; Reporting</h3>
+          <p>Centro de inteligencia unificado. KPIs de todas las áreas, reportes automáticos y modelos predictivos sobre la operación completa.</p>
+          <ul class="mod-list dim">
+            <li>◦ Centro de KPIs multi-módulo</li>
+            <li>◦ Reportes automáticos por rol</li>
+            <li>◦ Predicción de costos y demanda</li>
+            <li>◦ Exportación multi-formato</li>
+            <li>◦ Alertas inteligentes por umbral</li>
+          </ul>
+          <a href="#contacto" class="btn-mod-next">Registrar Interés →</a>
+        </article>
+      </div>
+      <div class="eco-nota" role="note">
+        <span aria-hidden="true">💡</span>
+        <p>Conectarse hoy al Módulo 01 significa que los módulos siguientes estarán disponibles con un solo clic — sin migración, sin nuevas cuentas, sin pérdida de datos.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<div class="sec-divider"></div>
+  <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  MÓDULO 01 DEEP DIVE                                                  ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<section id="modulo-01" class="sec m01-sec">
+  <!-- ╔══ MÓDULO 01 ══╗ -->
+  <section id="modulo-01" class="sec m01-sec">
     <div class="sec-inner">
-        <div class="m01-head">
-            <div class="chip chip-teal">Módulo 01 · Disponible Ahora</div>
-            <h2 class="sec-title">Gestión de Transporte<br><em class="grad">de Materiales de Construcción</em></h2>
-            <p class="sec-sub">Elimine el papel, los pagos duplicados y la opacidad financiera. Control total de su flota desde la oficina y desde el celular del conductor.</p>
+      <div class="m01-head">
+        <div class="chip chip-teal">Módulo 01 · Disponible Ahora</div>
+        <h2 class="sec-title">Gestión de Transporte<br><em class="grad">de Materiales de Construcción</em></h2>
+        <p class="sec-sub">Elimine el papel, los pagos duplicados y la opacidad financiera. Control total de su flota desde la oficina y desde el celular del conductor.</p>
+      </div>
+
+      <!-- Cómo funciona -->
+      <div style="margin-bottom: 56px;">
+        <div class="como-head">
+          <div class="chip chip-teal">Operación en 4 pasos</div>
+          <h3 style="font-family:var(--fh);font-size:clamp(1.25rem,2.5vw,1.85rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">
+            Así funciona el módulo<br><em class="grad">en su operación diaria.</em>
+          </h3>
+          <p class="sec-sub" style="margin:0 auto;font-size:.92rem;">Conductor en campo + Administrador en oficina. Conectados en tiempo real, sin llamadas, sin papel.</p>
         </div>
-
-        <!-- ✅ Así funciona el Módulo de Transporte -->
-        <div style="margin-bottom: 60px;">
-            <div class="como-head" style="margin-bottom: 40px;">
-                <div class="chip chip-teal">Operación en 3 pasos</div>
-                <h3 style="font-family:var(--fh);font-size:clamp(1.3rem,2.5vw,1.9rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;">
-                    Así funciona el módulo<br><em class="grad">en su operación diaria.</em>
-                </h3>
-                <p class="sec-sub" style="margin:0 auto;font-size:.93rem;">Conductor en campo + Administrador en oficina. Conectados en tiempo real, sin llamadas, sin papel.</p>
-            </div>
-            <div class="como-steps">
-                <div class="step-card reveal">
-                    <span class="step-num">01</span>
-                    <span class="step-ico">📸</span>
-                    <h3>Despacho con OCR</h3>
-                    <p>El despachador lee la placa de la máquina por OCR. El sistema vincula la ruta y el preoperacional automáticamente.</p>
-                    <span class="step-tag">Rol Despachador · IA OCR</span>
-                </div>
-
-                <div class="step-card reveal">
-                    <span class="step-num">02</span>
-                    <span class="step-ico">🖨️</span>
-                    <h3>Tiquete & Inicio</h3>
-                    <p>Se imprime el tiquete de salida por Bluetooth. El conductor inicia el viaje con seguimiento GPS activo.</p>
-                    <span class="step-tag">Bluetooth Print · GPS Real-time</span>
-                </div>
-
-                <div class="step-card reveal">
-                    <span class="step-num">03</span>
-                    <span class="step-ico">🧾</span>
-                    <h3>Peajes e IA Scanner</h3>
-                    <p>Durante la ruta se gestionan los costos de peajes asociados. Al regresar, la IA escanea los recibos físicos.</p>
-                    <span class="step-tag">Manejo Peajes · IA Scanner</span>
-                </div>
-
-                <div class="step-card reveal">
-                    <span class="step-num">04</span>
-                    <span class="step-ico">🏁</span>
-                    <h3>Cierre & Liquidación</h3>
-                    <p>Lectura de QR para cerrar el viaje. Los datos fluyen directo a la preliquidación financiera sin errores manuales.</p>
-                    <span class="step-tag">QR Sync · Cero Papel</span>
-                </div>
-            </div>
+        <div class="como-steps">
+          <div class="step-card reveal">
+            <span class="step-num" aria-hidden="true">01</span>
+            <span class="step-ico" aria-hidden="true">📸</span>
+            <h3>Despacho con OCR</h3>
+            <p>El despachador lee la placa de la máquina por OCR. El sistema vincula la ruta y el preoperacional automáticamente.</p>
+            <span class="step-tag">Rol Despachador · IA OCR</span>
+          </div>
+          <div class="step-card reveal">
+            <span class="step-num" aria-hidden="true">02</span>
+            <span class="step-ico" aria-hidden="true">🖨️</span>
+            <h3>Tiquete &amp; Inicio</h3>
+            <p>Se imprime el tiquete de salida por Bluetooth. El conductor inicia el viaje con seguimiento GPS activo.</p>
+            <span class="step-tag">Bluetooth Print · GPS Real-time</span>
+          </div>
+          <div class="step-card reveal">
+            <span class="step-num" aria-hidden="true">03</span>
+            <span class="step-ico" aria-hidden="true">🧾</span>
+            <h3>Peajes e IA Scanner</h3>
+            <p>Durante la ruta se gestionan los costos de peajes asociados. Al regresar, la IA escanea los recibos físicos.</p>
+            <span class="step-tag">Manejo Peajes · IA Scanner</span>
+          </div>
+          <div class="step-card reveal">
+            <span class="step-num" aria-hidden="true">04</span>
+            <span class="step-ico" aria-hidden="true">🏁</span>
+            <h3>Cierre &amp; Liquidación</h3>
+            <p>Lectura de QR para cerrar el viaje. Los datos fluyen directo a la preliquidación financiera sin errores manuales.</p>
+            <span class="step-tag">QR Sync · Cero Papel</span>
+          </div>
         </div>
+      </div>
 
-        <!-- Comparación antes/después -->
-        <div class="cmp-wrap reveal">
-            <div class="cmp-col malo">
-                <div class="cmp-head danger-h"><span>⚠️</span> Sin OptiCore IA</div>
-                <ul>
-                    <li>Vales en papel → pagos duplicados</li>
-                    <li>Sin GPS → rutas y fraude invisibles</li>
-                    <li>Conciliación: 2–3 días quincenales</li>
-                    <li>Documentos vencidos sin alertas</li>
-                    <li>Cero trazabilidad ante sus clientes</li>
-                </ul>
-                <div class="cmp-costo bad-c">Pérdida estimada: <strong>$300K–$750K COP/mes</strong></div>
-            </div>
-            <div class="cmp-vs">VS</div>
-            <div class="cmp-col bueno">
-                <div class="cmp-head good-h"><span>✅</span> Con OptiCore IA</div>
-                <ul>
-                    <li>QR único por vehículo → registro inviolable</li>
-                    <li>GPS en tiempo real desde el celular</li>
-                    <li>Conciliación automática en minutos</li>
-                    <li>Alertas 15 días antes del vencimiento</li>
-                    <li>IA que explica todo en lenguaje natural</li>
-                </ul>
-                <div class="cmp-costo good-c">ROI positivo desde el <strong>primer mes</strong></div>
-            </div>
+      <!-- Comparación -->
+      <div class="cmp-wrap reveal" role="region" aria-label="Comparación antes y después de OptiCore IA">
+        <div class="cmp-col malo">
+          <div class="cmp-head danger-h"><span aria-hidden="true">⚠️</span> Sin OptiCore IA</div>
+          <ul>
+            <li>Vales en papel → pagos duplicados</li>
+            <li>Sin GPS → rutas y fraude invisibles</li>
+            <li>Conciliación: 2–3 días quincenales</li>
+            <li>Documentos vencidos sin alertas</li>
+            <li>Cero trazabilidad ante sus clientes</li>
+          </ul>
+          <div class="cmp-costo bad-c">Pérdida estimada: <strong>$300K–$750K COP/mes</strong></div>
         </div>
-
-        <!-- Funcionalidades -->
-        <div class="feats-grid">
-            <div class="feat large reveal">
-                <div class="feat-ico">🗺️</div>
-                <h3>Monitor GPS en Tiempo Real</h3>
-                <p>Mapa interactivo con posición de cada unidad. Actualización cada 30 segundos. Historial completo. Detección automática de vehículos con más de 5 horas en ruta.</p>
-                <span class="feat-tag">Leaflet.js · WebSocket</span>
-            </div>
-            <div class="feat reveal">
-                <div class="feat-ico">🤖</div>
-                <h3>OptiBot IA</h3>
-                <p>Asistente powered por GPT-4o. "¿Qué ruta es la más costosa?" o "Diagnóstico de anomalías de hoy" — respuestas reales de la base de datos en segundos.</p>
-                <span class="feat-tag">GPT-4o Function Calling</span>
-            </div>
-            <div class="feat reveal">
-                <div class="feat-ico">💰</div>
-                <h3>Preliquidaciones Automáticas</h3>
-                <p>Cuentas de cobro a proveedores en minutos. Costo calculado por ruta y proveedor. Sin errores, sin demoras quincenales de 2 a 3 días.</p>
-                <span class="feat-tag">Módulo Financiero</span>
-            </div>
-            <div class="feat reveal">
-                <div class="feat-ico">🚨</div>
-                <h3>Torre de Control IA</h3>
-                <p>Detección de remisiones duplicadas, vehículos detenidos y documentos próximos a vencer. Visibilidad total sin necesidad de revisar registro por registro.</p>
-                <span class="feat-tag">Predictive Analytics</span>
-            </div>
-            <div class="feat reveal">
-                <div class="feat-ico">📱</div>
-                <h3>App Móvil PWA</h3>
-                <p>Sin descarga desde tiendas. El conductor abre el navegador, escanea el QR, inicia el viaje y el GPS transmite en segundo plano. Funciona sin conexión.</p>
-                <span class="feat-tag">PWA · Service Worker · Offline Sync</span>
-            </div>
-            <div class="feat large reveal">
-                <div class="feat-ico">📋</div>
-                <h3>Gestor de Vales y Auditoría</h3>
-                <p>Búsqueda avanzada por fecha, placa y remisión. Anulación controlada con motivo registrado. Trazabilidad completa de quién hizo qué y cuándo. Exportación directa a Excel para conciliación contable sin procesamiento adicional.</p>
-                <span class="feat-tag">Audit Trail · SheetJS · Export xlsx</span>
-            </div>
+        <div class="cmp-vs" aria-hidden="true">VS</div>
+        <div class="cmp-col bueno">
+          <div class="cmp-head good-h"><span aria-hidden="true">✅</span> Con OptiCore IA</div>
+          <ul>
+            <li>QR único por vehículo → registro inviolable</li>
+            <li>GPS en tiempo real desde el celular</li>
+            <li>Conciliación automática en minutos</li>
+            <li>Alertas 15 días antes del vencimiento</li>
+            <li>IA que explica todo en lenguaje natural</li>
+          </ul>
+          <div class="cmp-costo good-c">ROI positivo desde el <strong>primer mes</strong></div>
         </div>
+      </div>
 
-        <!-- Planes -->
-        <div class="planes-bloque">
-            <h3 class="planes-tit">Planes del Módulo de Transporte</h3>
-            <p class="planes-sub">Sin costos de instalación · Sin servidores · Solo paga por volumen de viajes</p>
-            <div class="planes-grid">
-                <div class="plan reveal">
-                    <div class="plan-nm">TRIAL</div>
-                    <div class="plan-ds">Evaluación gratuita</div>
-                    <ul>
-                        <li>✓ Hasta 50 viajes</li>
-                        <li>✓ 3 usuarios</li>
-                        <li>✓ GPS Real-Time</li>
-                        <li>✓ Panel básico</li>
-                        <li class="off">✗ Preliquidaciones</li>
-                        <li class="off">✗ OptiBot IA</li>
-                    </ul>
-                    <a href="#contacto" class="btn-plan-g">Comenzar Gratis</a>
-                </div>
-                <div class="plan featured reveal">
-                    <div class="plan-top-badge">MÁS POPULAR</div>
-                    <div class="plan-nm">PRO</div>
-                    <div class="plan-ds">Operaciones en crecimiento</div>
-                    <ul>
-                        <li>✓ Hasta 500 viajes/mes</li>
-                        <li>✓ 15 usuarios</li>
-                        <li>✓ GPS + Preliquidaciones</li>
-                        <li>✓ Reportes Excel</li>
-                        <li>✓ OptiBot IA básico</li>
-                        <li>✓ Soporte prioritario</li>
-                    </ul>
-                    <a href="#contacto" class="btn-plan-p">Solicitar Propuesta</a>
-                </div>
-                <div class="plan reveal">
-                    <div class="plan-nm">PLATINUM</div>
-                    <div class="plan-ds">Grandes constructoras</div>
-                    <ul>
-                        <li>✓ Viajes ilimitados</li>
-                        <li>✓ Usuarios ilimitados</li>
-                        <li>✓ Todo PRO +</li>
-                        <li>✓ Torre de Control IA</li>
-                        <li>✓ SLA garantizado</li>
-                        <li>✓ Gerente de cuenta</li>
-                    </ul>
-                    <a href="#contacto" class="btn-plan-g">Solicitar Propuesta</a>
-                </div>
-            </div>
-            <p class="planes-nota">* Precios definidos según volumen de operación. Contáctenos para propuesta personalizada.</p>
+      <!-- Features -->
+      <div class="feats-grid">
+        <div class="feat large reveal">
+          <div class="feat-ico" aria-hidden="true">🗺️</div>
+          <h3>Monitor GPS en Tiempo Real</h3>
+          <p>Mapa interactivo con posición de cada unidad. Actualización cada 30 segundos. Historial completo. Detección automática de vehículos con más de 5 horas en ruta.</p>
+          <span class="feat-tag">Leaflet.js · WebSocket</span>
         </div>
+        <div class="feat reveal">
+          <div class="feat-ico" aria-hidden="true">🤖</div>
+          <h3>OptiBot IA</h3>
+          <p>Asistente powered por GPT-4o. "¿Qué ruta es la más costosa?" — respuestas reales de la base de datos en segundos.</p>
+          <span class="feat-tag">GPT-4o Function Calling</span>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico" aria-hidden="true">💰</div>
+          <h3>Preliquidaciones Automáticas</h3>
+          <p>Cuentas de cobro a proveedores en minutos. Costo calculado por ruta y proveedor. Sin errores, sin demoras quincenales.</p>
+          <span class="feat-tag">Módulo Financiero</span>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico" aria-hidden="true">🚨</div>
+          <h3>Torre de Control IA</h3>
+          <p>Detección de remisiones duplicadas, vehículos detenidos y documentos próximos a vencer. Visibilidad total sin revisar registro por registro.</p>
+          <span class="feat-tag">Predictive Analytics</span>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico" aria-hidden="true">📱</div>
+          <h3>App Móvil PWA</h3>
+          <p>Sin descarga desde tiendas. El conductor abre el navegador, escanea el QR, inicia el viaje y el GPS transmite en segundo plano. Funciona sin conexión.</p>
+          <span class="feat-tag">PWA · Service Worker · Offline Sync</span>
+        </div>
+        <div class="feat large reveal">
+          <div class="feat-ico" aria-hidden="true">📋</div>
+          <h3>Gestor de Vales y Auditoría</h3>
+          <p>Búsqueda avanzada por fecha, placa y remisión. Anulación controlada con motivo registrado. Trazabilidad completa de quién hizo qué y cuándo. Exportación directa a Excel.</p>
+          <span class="feat-tag">Audit Trail · SheetJS · Export xlsx</span>
+        </div>
+      </div>
 
-        <!-- Testimonio -->
-        <blockquote class="testimonial reveal">
-            <div class="q-mark">"</div>
-            <p>Con OptiCore IA, el tiempo que antes tardábamos en conciliar una semana de viajes se reduce de <strong>2 días a menos de 2 horas</strong>. La visibilidad que tenemos ahora es completamente distinta.</p>
-            <cite>— Operación Piloto · <strong> Colombia</strong></cite>
-        </blockquote>
+      <!-- Planes -->
+      <div class="planes-bloque">
+        <h3 class="planes-tit">Planes del Módulo de Transporte</h3>
+        <p class="planes-sub">Sin costos de instalación · Sin servidores · Solo paga por volumen de viajes</p>
+        <div class="planes-grid">
+          <div class="plan reveal">
+            <div class="plan-nm">TRIAL</div>
+            <div class="plan-ds">Evaluación gratuita</div>
+            <ul>
+              <li>✓ Hasta 50 viajes</li>
+              <li>✓ 3 usuarios</li>
+              <li>✓ GPS Real-Time</li>
+              <li>✓ Panel básico</li>
+              <li class="off">✗ Preliquidaciones</li>
+              <li class="off">✗ OptiBot IA</li>
+            </ul>
+            <a href="#contacto" class="btn-plan-g">Comenzar Gratis</a>
+          </div>
+          <div class="plan featured reveal">
+            <div class="plan-top-badge">MÁS POPULAR</div>
+            <div class="plan-nm">PRO</div>
+            <div class="plan-ds">Operaciones en crecimiento</div>
+            <ul>
+              <li>✓ Hasta 500 viajes/mes</li>
+              <li>✓ 15 usuarios</li>
+              <li>✓ GPS + Preliquidaciones</li>
+              <li>✓ Reportes Excel</li>
+              <li>✓ OptiBot IA básico</li>
+              <li>✓ Soporte prioritario</li>
+            </ul>
+            <a href="#contacto" class="btn-plan-p">Solicitar Propuesta</a>
+          </div>
+          <div class="plan reveal">
+            <div class="plan-nm">PLATINUM</div>
+            <div class="plan-ds">Grandes constructoras</div>
+            <ul>
+              <li>✓ Viajes ilimitados</li>
+              <li>✓ Usuarios ilimitados</li>
+              <li>✓ Todo PRO +</li>
+              <li>✓ Torre de Control IA</li>
+              <li>✓ SLA garantizado</li>
+              <li>✓ Gerente de cuenta</li>
+            </ul>
+            <a href="#contacto" class="btn-plan-g">Solicitar Propuesta</a>
+          </div>
+        </div>
+        <p class="planes-nota">* Precios definidos según volumen de operación. Contáctenos para propuesta personalizada.</p>
+      </div>
+
+      <!-- Testimonio -->
+      <blockquote class="testimonial reveal">
+        <div class="q-mark" aria-hidden="true">"</div>
+        <p>Con OptiCore IA, el tiempo que antes tardábamos en conciliar una semana de viajes se reduce de <strong>2 días a menos de 2 horas</strong>. La visibilidad que tenemos ahora es completamente distinta.</p>
+        <footer>
+          <cite>— Operación Piloto · <strong>Colombia</strong></cite>
+        </footer>
+      </blockquote>
     </div>
-</section>
+  </section>
 
-<div class="sec-divider"></div>
+  <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  ✅ NUEVO: DEMO CTA SECTION                                           ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<section class="demo-section">
+  <!-- ╔══ DEMO CTA ══╗ -->
+  <section aria-label="Agendar demostración" class="demo-section">
     <div class="demo-inner">
-        <div class="chip">Sin compromiso</div>
-        <h2 class="demo-title">Vea OptiCore IA<br><em class="grad">con sus propios datos.</em></h2>
-        <p class="demo-sub">Agende una demo de 30 minutos con nuestro equipo. Le mostramos el sistema en vivo, configurado con su flota y sus rutas reales.</p>
-        <div class="demo-btns">
-            <a href="https://wa.me/573007970199?text=Hola,%20quiero%20agendar%20una%20demo%20de%20OptiCore%20IA" target="_blank" class="btn-demo-primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Agendar Demo por WhatsApp
-            </a>
-            <a href="#contacto" class="btn-demo-secondary">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                Formulario de Contacto
-            </a>
-        </div>
-        <div class="demo-trust">
-            <span class="trust-pill">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                Sin tarjeta de crédito
-            </span>
-            <span class="trust-pill">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                Respuesta en menos de 8 horas
-            </span>
-            <span class="trust-pill">
-                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                Demo con datos reales de su operación
-            </span>
-        </div>
+      <div class="chip">Sin compromiso</div>
+      <h2 class="demo-title">Vea OptiCore IA<br><em class="grad">con sus propios datos.</em></h2>
+      <p class="demo-sub">Agende una demo de 30 minutos con nuestro equipo. Le mostramos el sistema en vivo, configurado con su flota y sus rutas reales.</p>
+      <div class="demo-btns">
+        <a href="https://wa.me/573007970199?text=Hola,%20quiero%20agendar%20una%20demo%20de%20OptiCore%20IA"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn-demo-primary"
+           aria-label="Agendar demo por WhatsApp con Julián (se abre en nueva pestaña)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar Demo por WhatsApp
+        </a>
+        <a href="#contacto" class="btn-demo-secondary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Formulario de Contacto
+        </a>
+      </div>
+      <div class="demo-trust">
+        <span class="trust-pill"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Sin tarjeta de crédito</span>
+        <span class="trust-pill"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Respuesta en menos de 8 horas</span>
+        <span class="trust-pill"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Demo con datos reales de su operación</span>
+      </div>
     </div>
-</section>
+  </section>
 
-<div class="sec-divider"></div>
+  <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  CONSULTORÍA BI                                                        ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<section id="consultoria" class="sec bi-sec">
+  <!-- ╔══ CONSULTORÍA BI ══╗ -->
+  <section id="consultoria" class="sec bi-sec">
     <div class="sec-inner">
-        <div class="bi-separador">
-            <div class="bi-sep-linea"></div>
-            <span>Servicio Independiente · No requiere suscripción SaaS</span>
-            <div class="bi-sep-linea"></div>
+      <div class="bi-separador" aria-hidden="true">
+        <div class="bi-sep-linea"></div>
+        <span>Servicio Independiente · No requiere suscripción SaaS</span>
+        <div class="bi-sep-linea"></div>
+      </div>
+      <div class="bi-head">
+        <div class="chip chip-coral">Consultoría Especializada en Datos</div>
+        <h2 class="sec-title">Sus datos tienen valor.<br><em class="grad-coral">Nosotros lo extraemos.</em></h2>
+        <p class="sec-sub">Ofrecemos arquitectura de datos, Business Intelligence y estrategia analítica de forma completamente independiente — ya sea que use nuestra plataforma o cualquier otro sistema.</p>
+      </div>
+      <div class="bi-grid">
+        <div class="bi-card reveal">
+          <div class="bi-num" aria-hidden="true">01</div>
+          <div class="bi-ico" aria-hidden="true">📊</div>
+          <h3>Dashboards con Power BI</h3>
+          <p>Tableros dinámicos conectados a sus fuentes actuales: SQL Server, SharePoint, ERP, Excel. KPIs en tiempo real y distribución automática de reportes por rol.</p>
+          <div class="bi-tech">Power BI · DAX · DirectQuery · SharePoint</div>
         </div>
-        <div class="bi-head">
-            <div class="chip chip-coral">Consultoría Especializada en Datos</div>
-            <h2 class="sec-title">Sus datos tienen valor.<br><em class="grad-coral">Nosotros lo extraemos.</em></h2>
-            <p class="sec-sub">Ofrecemos arquitectura de datos, Business Intelligence y estrategia analítica de forma completamente independiente — ya sea que use nuestra plataforma o cualquier otro sistema.</p>
+        <div class="bi-card reveal">
+          <div class="bi-num" aria-hidden="true">02</div>
+          <div class="bi-ico" aria-hidden="true">🏗️</div>
+          <h3>Arquitectura de Datos</h3>
+          <p>Modelado y normalización de bases de datos SQL. Diseño de pipelines ETL para integrar fuentes heterogéneas. Desde FoxPro hasta PostgreSQL en la nube.</p>
+          <div class="bi-tech">SQL Server · PostgreSQL · ETL · Modelado ER</div>
         </div>
-        <div class="bi-grid">
-            <div class="bi-card reveal">
-                <div class="bi-num">01</div>
-                <div class="bi-ico">📊</div>
-                <h3>Dashboards con Power BI</h3>
-                <p>Tableros dinámicos conectados a sus fuentes actuales: SQL Server, SharePoint, ERP, Excel. KPIs en tiempo real y distribución automática de reportes por rol.</p>
-                <div class="bi-tech">Power BI · DAX · DirectQuery · SharePoint</div>
-            </div>
-            <div class="bi-card reveal">
-                <div class="bi-num">02</div>
-                <div class="bi-ico">🏗️</div>
-                <h3>Arquitectura de Datos</h3>
-                <p>Modelado y normalización de bases de datos SQL. Diseño de pipelines ETL para integrar fuentes heterogéneas. Desde FoxPro hasta PostgreSQL en la nube, sin perder el historial.</p>
-                <div class="bi-tech">SQL Server · PostgreSQL · ETL · Modelado ER</div>
-            </div>
-            <div class="bi-card reveal">
-                <div class="bi-num">03</div>
-                <div class="bi-ico">💡</div>
-                <h3>Consultoría Estratégica</h3>
-                <p>Acompañamiento para decisiones basadas en evidencia. Detectamos cuellos de botella, optimizamos recursos y construimos indicadores que miden lo que realmente importa.</p>
-                <div class="bi-tech">KPI Design · Análisis operativo · Storytelling de datos</div>
-            </div>
+        <div class="bi-card reveal">
+          <div class="bi-num" aria-hidden="true">03</div>
+          <div class="bi-ico" aria-hidden="true">💡</div>
+          <h3>Consultoría Estratégica</h3>
+          <p>Acompañamiento para decisiones basadas en evidencia. Detectamos cuellos de botella, optimizamos recursos y construimos indicadores que miden lo que realmente importa.</p>
+          <div class="bi-tech">KPI Design · Análisis operativo · Storytelling de datos</div>
         </div>
-        <div class="bi-cta-bloque reveal">
-            <p>¿Tiene datos dispersos en Excel, ERP o bases SQL? Los convertimos en un activo estratégico — con o sin nuestra plataforma.</p>
-            <a href="#contacto" class="btn-bi">Solicitar Evaluación Gratuita →</a>
-        </div>
+      </div>
+      <div class="bi-cta-bloque reveal">
+        <p>¿Tiene datos dispersos en Excel, ERP o bases SQL? Los convertimos en un activo estratégico — con o sin nuestra plataforma.</p>
+        <a href="#contacto" class="btn-bi">Solicitar Evaluación Gratuita →</a>
+      </div>
     </div>
-</section>
+  </section>
 
-<div class="sec-divider"></div>
+  <div class="sec-divider" aria-hidden="true"></div>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  CONTACTO                                                             ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<section id="contacto" class="sec contact-sec">
+  <!-- ╔══ CONTACTO ══╗ -->
+  <section id="contacto" class="sec contact-sec">
     <div class="sec-inner">
-        <div class="contact-grid">
-            <div class="contact-left">
-                <div class="chip">Hablemos</div>
-                <h2 class="sec-title">¿Listo para transformar<br><em class="grad">su operación?</em></h2>
-                <p>Cuéntenos en qué está trabajando. Módulo de transporte, integración ERP, consultoría de datos — nuestros especialistas responden en menos de 8 horas.</p>
-                <div class="persons">
-                    <div class="person reveal">
-                        <div class="av">JE</div>
-                        <div class="pinfo">
-                            <strong>Julián Echeverría</strong>
-                            <span>BI Coordinator & Data Architect</span>
-                            <a href="https://wa.me/573007970199" target="_blank" class="wa">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                300 797 0199
-                            </a>
-                        </div>
-                    </div>
-                    <div class="person reveal">
-                        <div class="av">AE</div>
-                        <div class="pinfo">
-                            <strong>Armando Echeverría</strong>
-                            <span>Senior ERP Consultant & Business Logic</span>
-                            <a href="https://wa.me/573332869212" target="_blank" class="wa">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                333 286 9212
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-right">
-                <form class="cform reveal" id="cForm">
-                    <div class="frow">
-                        <div class="fg"><label>Empresa / Nombre *</label><input type="text" placeholder="Nombre Empresa" required></div>
-                        <div class="fg"><label>Cargo</label><input type="text" placeholder="Gerente de Operaciones"></div>
-                    </div>
-                    <div class="fg"><label>Correo corporativo *</label><input type="email" placeholder="gerencia@empresa.com" required></div>
-                    <div class="fg">
-                        <label>¿En qué podemos ayudarle? *</label>
-                        <select required>
-                            <option value="">Seleccione su interés principal</option>
-                            <option>Módulo 01 — Gestión de Transporte</option>
-                            <option>Módulo 02 — Integración ERP Cloud (próximo)</option>
-                            <option>Módulo 03 — Analytics & Reporting (próximo)</option>
-                            <option>Consultoría Power BI / Arquitectura de Datos</option>
-                            <option>Modernización ERP FoxPro → Cloud</option>
-                            <option>Varios / Evaluación general</option>
-                        </select>
-                    </div>
-                    <div class="fg">
-                        <label>¿Cuántos vehículos opera?</label>
-                        <select>
-                            <option value="">No aplica / Solo consultoría</option>
-                            <option>1 – 10 vehículos</option>
-                            <option>11 – 30 vehículos</option>
-                            <option>31 – 60 vehículos</option>
-                            <option>60+ vehículos</option>
-                        </select>
-                    </div>
-                    <div class="fg"><label>Cuéntenos más</label><textarea rows="4" placeholder="Descríbanos su operación y el principal desafío que enfrenta hoy..."></textarea></div>
-                    <button type="submit" class="btn-submit" id="submitBtn">
-                        Enviar Solicitud
-                        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
-                </form>
-            </div>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="chip">Hablemos</div>
+          <h2 class="sec-title">¿Listo para transformar<br><em class="grad">su operación?</em></h2>
+          <p>Cuéntenos en qué está trabajando. Módulo de transporte, integración ERP, consultoría de datos — nuestros especialistas responden en menos de 8 horas.</p>
+          <div class="persons">
+            <address class="person reveal" style="font-style:normal;">
+              <div class="av" aria-hidden="true">JE</div>
+              <div class="pinfo">
+                <strong>Julián Echeverría</strong>
+                <span>BI Coordinator &amp; Data Architect</span>
+                <a href="https://wa.me/573007970199"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="wa"
+                   aria-label="Contactar a Julián Echeverría por WhatsApp al 300 797 0199">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  300 797 0199
+                </a>
+              </div>
+            </address>
+            <address class="person reveal" style="font-style:normal;">
+              <div class="av" aria-hidden="true">AE</div>
+              <div class="pinfo">
+                <strong>Armando Echeverría</strong>
+                <span>Senior ERP Consultant &amp; Business Logic</span>
+                <a href="https://wa.me/573332869212"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="wa"
+                   aria-label="Contactar a Armando Echeverría por WhatsApp al 333 286 9212">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  333 286 9212
+                </a>
+              </div>
+            </address>
+          </div>
         </div>
-    </div>
-</section>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  FOOTER                                                               ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
-<footer>
-    <div class="footer-inner">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <img src="logo.png" alt="OptiCore Systems IA" class="footer-logo">
-                <p>Ingeniería de Datos e IA para el Sector Constructor.</p>
-                <p class="footer-legacy">+25 años de experiencia ERP · Ahora en la nube con IA</p>
+        <div class="contact-right">
+          <form class="cform reveal" id="cForm" novalidate aria-label="Formulario de contacto">
+            <div class="frow">
+              <div class="fg">
+                <label for="f-empresa">Empresa / Nombre <span aria-hidden="true">*</span></label>
+                <input type="text" id="f-empresa" name="empresa" placeholder="Nombre Empresa" required autocomplete="organization">
+              </div>
+              <div class="fg">
+                <label for="f-cargo">Cargo</label>
+                <input type="text" id="f-cargo" name="cargo" placeholder="Gerente de Operaciones" autocomplete="organization-title">
+              </div>
             </div>
-            <div class="footer-cols">
-                <div class="footer-col">
-                    <strong>Plataforma</strong>
-                    <a href="#ecosistema">Ecosistema de Módulos</a>
-                    <a href="#modulo-01">Módulo 01 · Transporte</a>
-                    <a href="#como-funciona">Cómo Funciona</a>
-                    <a href="https://apptransporte.onrender.com/home" target="_blank">Entrar al Sistema</a>
-                </div>
-                <div class="footer-col">
-                    <strong>Servicios</strong>
-                    <a href="#consultoria">Consultoría Power BI</a>
-                    <a href="#consultoria">Arquitectura de Datos</a>
-                    <a href="#consultoria">Modernización ERP</a>
-                </div>
-                <div class="footer-col">
-                    <strong>Contacto</strong>
-                    <a href="https://wa.me/573007970199" target="_blank">WhatsApp Julián</a>
-                    <a href="https://wa.me/573332869212" target="_blank">WhatsApp Armando</a>
-                    <a href="#contacto">Formulario</a>
-                </div>
+            <div class="fg">
+              <label for="f-email">Correo corporativo <span aria-hidden="true">*</span></label>
+              <input type="email" id="f-email" name="email" placeholder="gerencia@empresa.com" required autocomplete="email">
             </div>
+            <div class="fg">
+              <label for="f-interes">¿En qué podemos ayudarle? <span aria-hidden="true">*</span></label>
+              <select id="f-interes" name="interes" required>
+                <option value="">Seleccione su interés principal</option>
+                <option>Módulo 01 — Gestión de Transporte</option>
+                <option>Módulo 02 — Integración ERP Cloud (próximo)</option>
+                <option>Módulo 03 — Analytics &amp; Reporting (próximo)</option>
+                <option>Consultoría Power BI / Arquitectura de Datos</option>
+                <option>Modernización ERP FoxPro → Cloud</option>
+                <option>Varios / Evaluación general</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="f-vehiculos">¿Cuántos vehículos opera?</label>
+              <select id="f-vehiculos" name="vehiculos">
+                <option value="">No aplica / Solo consultoría</option>
+                <option>1 – 10 vehículos</option>
+                <option>11 – 30 vehículos</option>
+                <option>31 – 60 vehículos</option>
+                <option>60+ vehículos</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="f-mensaje">Cuéntenos más</label>
+              <textarea id="f-mensaje" name="mensaje" rows="4" placeholder="Descríbanos su operación y el principal desafío que enfrenta hoy..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              Enviar Solicitud
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
         </div>
-        <div class="footer-bot">
-            <span>© 2026 OptiCore Systems IA · Todos los derechos reservados · Colombia</span>
-            <span class="footer-stack">FastAPI · PostgreSQL · GPT-4o · Render.com</span>
-        </div>
+      </div>
     </div>
+  </section>
+
+</main><!-- /main -->
+
+<!-- ╔══ FOOTER ══╗ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.png" alt="OptiCore Systems IA" class="footer-logo" width="120" height="38" loading="lazy">
+        <p>Ingeniería de Datos e IA para el Sector Constructor.</p>
+        <p class="footer-legacy">+25 años de experiencia ERP · Ahora en la nube con IA</p>
+      </div>
+      <nav class="footer-cols" aria-label="Navegación del pie de página">
+        <div class="footer-col">
+          <strong>Plataforma</strong>
+          <a href="#ecosistema">Ecosistema de Módulos</a>
+          <a href="#modulo-01">Módulo 01 · Transporte</a>
+          <a href="https://apptransporte.onrender.com/home" target="_blank" rel="noopener noreferrer">Entrar al Sistema</a>
+        </div>
+        <div class="footer-col">
+          <strong>Servicios</strong>
+          <a href="#consultoria">Consultoría Power BI</a>
+          <a href="#consultoria">Arquitectura de Datos</a>
+          <a href="#consultoria">Modernización ERP</a>
+        </div>
+        <div class="footer-col">
+          <strong>Contacto</strong>
+          <a href="https://wa.me/573007970199" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Julián Echeverría">WhatsApp Julián</a>
+          <a href="https://wa.me/573332869212" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Armando Echeverría">WhatsApp Armando</a>
+          <a href="#contacto">Formulario</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 OptiCore Systems IA · Todos los derechos reservados · Colombia</span>
+      <span class="footer-stack">FastAPI · PostgreSQL · GPT-4o · Render.com</span>
+    </div>
+  </div>
 </footer>
 
-<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
-<!-- ║  OPTIBOT WIDGET                                                       ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<!-- ╔══ OPTIBOT WIDGET ══╗ -->
 <div id="optibot-widget" class="optibot-widget">
-    <div id="optibot-window" class="optibot-window">
-        <div class="optibot-header">
-            <div class="optibot-info">
-                <span class="bot-avatar">🤖</span>
-                <div class="bot-text">
-                    <strong>OptiBot IA</strong>
-                    <span>Asistente Comercial</span>
-                </div>
-            </div>
-            <button id="optibot-close" class="optibot-close">&times;</button>
+  <!-- El div.optibot-window actúa como dialog; role+aria en el JS -->
+  <div id="optibot-window"
+       class="optibot-window"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="optibot-title"
+       aria-describedby="optibot-desc">
+    <div class="optibot-header">
+      <div class="optibot-info">
+        <span class="bot-avatar" aria-hidden="true">🤖</span>
+        <div class="bot-text">
+          <strong id="optibot-title">OptiBot IA</strong>
+          <span id="optibot-desc">Asistente Comercial</span>
         </div>
-        <div id="optibot-messages" class="optibot-messages">
-            <div class="msg bot-msg">
-                Hola. Soy OptiBot, la inteligencia artificial de OptiCore Systems. ¿Tiene alguna duda sobre el módulo de transporte o nuestra consultoría en Power BI?
-            </div>
-        </div>
-        <form id="optibot-form" class="optibot-input-area">
-            <input type="text" id="optibot-input" placeholder="Escribe tu pregunta..." autocomplete="off" required>
-            <button type="submit" id="optibot-send" aria-label="Enviar">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </button>
-        </form>
+      </div>
+      <button id="optibot-close" class="optibot-close" aria-label="Cerrar chat">×</button>
     </div>
-    <button id="optibot-toggle" class="optibot-toggle">
-        <span class="bot-icon">🤖</span>
-        <span class="bot-tooltip">¿Preguntas?</span>
-    </button>
+
+    <!-- aria-live="polite" para anunciar mensajes nuevos a lectores de pantalla -->
+    <div id="optibot-messages"
+         class="optibot-messages"
+         role="log"
+         aria-live="polite"
+         aria-atomic="false">
+      <div class="msg bot-msg">
+        Hola. Soy OptiBot, la inteligencia artificial de OptiCore Systems. ¿Tiene alguna duda sobre el módulo de transporte o nuestra consultoría en Power BI?
+      </div>
+    </div>
+
+    <form id="optibot-form" class="optibot-input-area" aria-label="Enviar mensaje a OptiBot">
+      <label for="optibot-input" class="sr-only">Escribe tu pregunta</label>
+      <input type="text"
+             id="optibot-input"
+             name="message"
+             placeholder="Escribe tu pregunta..."
+             autocomplete="off"
+             required
+             aria-required="true">
+      <button type="submit" id="optibot-send" aria-label="Enviar mensaje">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </form>
+  </div>
+
+  <button id="optibot-toggle"
+          class="optibot-toggle"
+          aria-label="Abrir chat con OptiBot"
+          aria-expanded="false"
+          aria-controls="optibot-window">
+    <span class="bot-icon" aria-hidden="true">🤖</span>
+    <span class="bot-tooltip" aria-hidden="true">¿Preguntas?</span>
+  </button>
 </div>
 
-<!-- Scripts -->
+<!-- Scripts — defer para no bloquear el render -->
 <script src="js/canvas.js" defer></script>
 <script src="js/ui.js" defer></script>
 <script src="js/optibot.js" defer></script>
-
-<!-- ✅ NUEVO: Counter animation + extras -->
-<script>
-// ── STATS COUNTER ──────────────────────────────────────────────────────────
-(function() {
-    const counters = document.querySelectorAll('.stat-num[data-target]');
-    const duration = 1800;
-
-    function animateCounter(el) {
-        const target = parseFloat(el.dataset.target);
-        const prefix = el.dataset.prefix || '';
-        const suffix = el.dataset.suffix || '';
-        const start = performance.now();
-
-        function update(now) {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            // easeOutQuart
-            const ease = 1 - Math.pow(1 - progress, 4);
-            const current = Math.round(ease * target);
-            el.textContent = prefix + current + suffix;
-            if (progress < 1) requestAnimationFrame(update);
-        }
-        requestAnimationFrame(update);
-    }
-
-    const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                animateCounter(e.target);
-                io.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    counters.forEach(c => io.observe(c));
-})();
-
-// ── MOCKUP: número viajes animado ─────────────────────────────────────────
-(function() {
-    const el = document.getElementById('mk-viajes');
-    if (!el) return;
-    setInterval(() => {
-        const n = Math.floor(Math.random() * 10) + 44;
-        el.textContent = n;
-    }, 3000);
-})();
-</script>
 </body>
 </html>
