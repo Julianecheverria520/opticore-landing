@@ -1,7 +1,7 @@
 /* ==========================================================================
    OPTIBOT — Asistente Comercial IA
-   OptiCore Systems IA v3.0
-   Mejoras: contexto multi-turno, aria-live, typing dots, throttle envío
+   OptiCore Systems IA v4.0
+   Sincronizado con FastAPI + Historial de Conversación
    ========================================================================== */
 
 (function initOptiBot() {
@@ -15,63 +15,50 @@
 
   if (!btnToggle || !chatWindow) return;
 
-  /* Accesibilidad: el contenedor de mensajes debe tener aria-live en el HTML.
-     Lo añadimos aquí por si no está en el markup. */
+  // Historial de conversación para dar contexto a la IA
+  let conversationHistory = [];
+
+  /* ── Configuración Inicial ── */
   if (!messagesEl.hasAttribute('aria-live')) {
     messagesEl.setAttribute('aria-live', 'polite');
     messagesEl.setAttribute('aria-atomic', 'false');
   }
 
-  /* Historial de conversación (contexto multi-turno) */
-  const conversationHistory = [];
-
-  /* ── Abrir / cerrar ── */
   function setOpen(open) {
     chatWindow.classList.toggle('active', open);
     btnToggle.setAttribute('aria-expanded', String(open));
     if (open) {
       chatInput.focus();
-      // Quitar indicador de no-leídos
       btnToggle.removeAttribute('data-unread');
     }
   }
 
-  btnToggle.addEventListener('click', () => {
-    setOpen(!chatWindow.classList.contains('active'));
-  });
-
+  btnToggle.addEventListener('click', () => setOpen(!chatWindow.classList.contains('active')));
   btnClose.addEventListener('click', () => setOpen(false));
 
-  // Cerrar con Escape
-  chatWindow.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { setOpen(false); btnToggle.focus(); }
-  });
-
-  /* ── Añadir mensaje al DOM ── */
+  /* ── Interfaz de Mensajes ── */
   function addMessage(text, sender) {
     const div = document.createElement('div');
     div.classList.add('msg', sender === 'user' ? 'user-msg' : 'bot-msg');
 
-    // Soporte básico de markdown: **negrita** y saltos de línea
-    const safe = text
+    // Limpieza y formato básico (negritas y saltos de línea)
+    const safeContent = text
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\n/g, '<br>');
 
-    div.innerHTML = safe;
+    div.innerHTML = safeContent;
     messagesEl.appendChild(div);
     messagesEl.scrollTop = messagesEl.scrollHeight;
     return div;
   }
 
-  /* ── Indicador "escribiendo…" (3 dots) ── */
   function showTyping() {
     const div = document.createElement('div');
     div.classList.add('msg', 'bot-msg');
     div.id = 'optibot-typing';
-    div.setAttribute('aria-label', 'OptiBot está escribiendo');
     div.innerHTML = '<span class="typing-dots"><span></span><span></span><span></span></span>';
     messagesEl.appendChild(div);
     messagesEl.scrollTop = messagesEl.scrollHeight;
@@ -82,69 +69,68 @@
     if (el) el.remove();
   }
 
-  /* ── Envío del mensaje ── */
-  let sending = false; // throttle: evita dobles envíos
+  /* ── Lógica de Envío y Conexión con API ── */
+  let isSending = false;
 
   chatForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (sending) return;
+    if (isSending) return;
 
     const userText = chatInput.value.trim();
     if (!userText) return;
 
-    sending = true;
+    isSending = true;
     sendBtn.disabled = true;
 
-    // 1. Mostrar mensaje del usuario
+    // 1. UI: Mostrar mensaje del usuario
     addMessage(userText, 'user');
     chatInput.value = '';
 
-    // 2. Añadir al historial
-    conversationHistory.push({ role: 'user', content: userText });
-
-    // 3. Mostrar typing
+    // 2. IA: Mostrar indicador de escritura
     showTyping();
 
     try {
       const response = await fetch('/api/chat', {
-        method:  'POST',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        // Enviamos el historial completo para contexto multi-turno
         body: JSON.stringify({
           message: userText,
-          history: conversationHistory.slice(-10) // últimos 10 turnos
+          history: conversationHistory.slice(-6) // Enviamos los últimos 6 mensajes para contexto
         })
       });
 
-      if (!response.ok) {
-        const err = await response.json().catch(() => ({}));
-        throw new Error(err.detail || `Error ${response.status}`);
+      // Validar si la respuesta es JSON para evitar el error "Unexpected end of JSON"
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+          throw new Error("El servidor no respondió con JSON válido.");
       }
 
       const data = await response.json();
       hideTyping();
 
-      const replyText = data.reply || 'Sin respuesta del servidor.';
-      addMessage(replyText, 'bot');
+      if (!response.ok) {
+        throw new Error(data.detail || `Error ${response.status}`);
+      }
 
-      // Guardar respuesta del bot en historial
-      conversationHistory.push({ role: 'assistant', content: replyText });
+      // 3. UI: Mostrar respuesta del Bot
+      const botReply = data.reply || 'No recibí una respuesta clara. ¿Podrías repetir?';
+      addMessage(botReply, 'bot');
+
+      // 4. Memoria: Guardar en el historial local
+      conversationHistory.push({ role: 'user', content: userText });
+      conversationHistory.push({ role: 'assistant', content: botReply });
 
     } catch (error) {
+      console.error('[OptiBot Error]:', error);
       hideTyping();
       addMessage(
-        'En este momento no puedo conectarme. Por favor escríbenos por WhatsApp o usa el formulario de contacto.',
+        'Lo siento, tengo problemas de conexión. Por favor, intenta de nuevo o contacta a soporte por WhatsApp.',
         'bot'
       );
-      console.error('[OptiBot]', error.message);
     } finally {
-      sending = false;
+      isSending = false;
       sendBtn.disabled = false;
       chatInput.focus();
     }
   });
-
-  /* ── Notificación de no-leídos cuando el chat está cerrado ── */
-  // Si el usuario recibe un mensaje proactivo en el futuro,
-  // usar: btnToggle.setAttribute('data-unread', '1');
 })();

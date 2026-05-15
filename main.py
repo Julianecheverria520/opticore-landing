@@ -2,13 +2,20 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import openai
 import os
+from typing import List, Optional
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
 class ChatRequest(BaseModel):
     message: str
+    history: Optional[List[ChatMessage]] = [] # Acepta el historial del JS
 
 # El conocimiento extraído de tu Dossier
 OPTICORE_KNOWLEDGE = """
@@ -39,13 +46,21 @@ REGLAS ESTRICTAS DE COMPORTAMIENTO:
 @app.post("/api/chat")
 async def chat_with_optibot(request: ChatRequest):
     try:
+        # 2. Construimos los mensajes incluyendo el historial previo
+        messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+        
+        # Añadimos los últimos turnos del historial para que tenga contexto
+        if request.history:
+            for msg in request.history:
+                messages.append({"role": msg.role, "content": msg.content})
+        
+        # Añadimos la pregunta actual
+        messages.append({"role": "user", "content": request.message})
+
         response = openai.chat.completions.create(
-            model="gpt-4o", # O gpt-4o-mini para ahorrar costos
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": request.message}
-            ],
-            temperature=0.3, # Temperatura baja para que sea muy preciso y no alucine
+            model="gpt-4o",
+            messages=messages, # Enviamos el pack completo de mensajes
+            temperature=0.3,
             max_tokens=250
         )
         
@@ -53,4 +68,5 @@ async def chat_with_optibot(request: ChatRequest):
         return {"reply": bot_reply}
         
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        # Esto evita el "Unexpected end of JSON" al asegurar que siempre hay una respuesta JSON
+        return JSONResponse(status_code=500, content={"detail": str(e)})
