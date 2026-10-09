@@ -89,7 +89,8 @@
     nombre: 'Escribe tu nombre.',
     empresa: 'Escribe el nombre de tu empresa.',
     email: 'Escribe un correo válido, por ejemplo tu@empresa.com.',
-    interes: 'Elige qué te interesa ver.'
+    interes: 'Elige qué te interesa ver.',
+    autoriza: 'Debes aceptar la política de datos para enviar.'
   };
 
   function mostrarError(texto) {
@@ -112,9 +113,9 @@
     limpiarError();
 
     var primero = null;
-    ['nombre', 'empresa', 'email', 'interes'].forEach(function (nombre) {
+    ['nombre', 'empresa', 'email', 'interes', 'autoriza'].forEach(function (nombre) {
       var campo = form.elements[nombre];
-      campo.value = campo.value.trim();
+      if (campo.type !== 'checkbox') campo.value = campo.value.trim();
       var valido = campo.checkValidity();
       campo.setAttribute('aria-invalid', valido ? 'false' : 'true');
       if (!valido && !primero) primero = campo;
@@ -142,6 +143,7 @@
       Interes: form.elements.interes.value,
       Equipos: form.elements.equipos.value || 'No lo dijo',
       Mensaje: form.elements.mensaje.value.trim() || 'Sin mensaje',
+      Autorizacion_datos: 'Sí',
       _replyto: form.elements.email.value
     };
 
